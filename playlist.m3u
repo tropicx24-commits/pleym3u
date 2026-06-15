@@ -579,20 +579,28 @@ https://video-auth1.iol.pt/beachcam/bcpauldomar2/playlist.m3u8
 
 #EXTINF:-1 group-title="*TÜRK_Webcam",Istanbul_AKOM - 25
 http://ibb-media2.ibb.gov.tr:1935/live/25.stream/playlist.m3u8
+
 #EXTINF:-1 group-title="*TÜRK_Webcam",Istanbul_AKOM - 69
 http://ibb-media2.ibb.gov.tr:1935/live/69.stream/playlist.m3u8
+
 #EXTINF:-1 group-title="*TÜRK_Webcam",Istanbul_AKOM - 134
 http://ibb-media2.ibb.gov.tr:1935/live/134.stream/playlist.m3u8
+
 #EXTINF:-1 group-title="*TÜRK_Webcam",Istanbul_AKOM - 145
 http://ibb-media2.ibb.gov.tr:1935/live/145.stream/playlist.m3u8
+
 #EXTINF:-1 group-title="*TÜRK_Webcam",Istanbul_AKOM - 264
 http://ibb-media2.ibb.gov.tr:1935/live/264.stream/playlist.m3u8
+
 #EXTINF:-1 group-title="*TÜRK_Webcam",Istanbul_AKOM - 274
 http://ibb-media2.ibb.gov.tr:1935/live/274.stream/playlist.m3u8
+
 #EXTINF:-1 group-title="*TÜRK_Webcam",Istanbul_AKOM - 344
 http://ibb-media2.ibb.gov.tr:1935/live/344.stream/playlist.m3u8
+
 #EXTINF:-1 group-title="*TÜRK_Webcam",Istanbul_AKOM - 376
 http://ibb-media2.ibb.gov.tr:1935/live/376.stream/playlist.m3u8
+
 #EXTINF:-1 group-title="*TÜRK_Webcam",Istanbul_AKOM - 379
 http://ibb-media2.ibb.gov.tr:1935/live/379.stream/playlist.m3u8
 #EXTINF:-1 group-title="*TÜRK_Webcam",Istanbul_AKOM - 386
