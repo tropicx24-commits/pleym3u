@@ -14,8 +14,6 @@ https://moondigitaledge2.radyotvonline.net/radyo7ankara/playlist.m3u8
 #EXTINF:-1,USKUDAR
 https://hls.ibb.gov.tr/ls/cam_turistik/b_uskudar.stream/playlist.m3u8
 #EXTINF:-1,DRAGOS
-https://hls.ibb.gov.tr/ls/cam_turistik/b_dragos.stream/playlist.m3u8
-#EXTINF:-1,DRAGOS
 https://hls.ibb.gov.tr/ls/cam_turistik/b_dragos.stream/chunklist.m3u8
 #EXTINF:-1,METROHAN
 https://hls.ibb.gov.tr/ls/cam_turistik/b_metrohan.stream/playlist.m3u8
