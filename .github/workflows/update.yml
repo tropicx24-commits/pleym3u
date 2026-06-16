@@ -16,10 +16,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Download latest playlist
+            - name: Build playlist
         run: |
-          curl -L "https://raw.githubusercontent.com/batuhansabri55/AkcagozTV_Canli/main/tr.m3u" -o playlist.m3u
+          curl -L "https://raw.githubusercontent.com/tropicx24-commits/my_channels.m3u/main/playlist.m3u" -o my_channels.m3u
 
+          curl -L "https://raw.githubusercontent.com/batuhansabri55/AkcagozTV_Canli/main/tr.m3u" -o remote.m3u
+
+          echo "#EXTM3U" > playlist.m3u
+
+          grep -v "^#EXTM3U" my_channels.m3u >> playlist.m3u
+          grep -v "^#EXTM3U" remote.m3u >> playlist.m3u
+
+          rm -f my_channels.m3u remote.m3u
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
