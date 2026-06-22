@@ -4127,7 +4127,7 @@ http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/223134
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/172690
 #EXTINF:0 tvg-agent="Firefox" tvg-id="beIN SPORTS 5" tvg-name="TR: Bein Sports 5 (Yuksek Kalite) Mac Zamani" tvg-logo="http://afis.unimaxapp.eu/logoslar/beinsports1.png" group-title="TR-SPOR",TR: Bein Sports 5 (Yuksek Kalite) Mac Zamani
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/223135
-#EXTINF:0 tvg-agent="Firefox" tvg-id="beIN SPORTS MAX 1" tvg-name="TR: beIN SPORTS MAX 1 " tvg-logo="http://logo.multicms.info/logoslar/bein-sports-max-1-qa-tr.png" group-title="TR-SPOR",TR: beIN SPORTS MAX 1 
+#EXTINF:0 tvg-agent="Firefox" tvg-id="beIN SPORTS MAX 1" tvg-name="TR: beIN SPORTS MAX 1 " tvg-logo="http://logo.multicms.info/logoslar/bein-sports-max-1-qa-tr.png" group-title="TR-SPOR",TR: beIN SPORTS MAX 1
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/79
 #EXTINF:0 tvg-agent="Firefox" tvg-id="beIN SPORTS MAX 1" tvg-name="TR: beIN SPORTS MAX 1 " tvg-logo="http://logo.multicms.info/logoslar/bein-sports-max-1-qa-tr.png" group-title="TR-SPOR",TR: beIN SPORTS MAX 1 
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/80
@@ -5435,7 +5435,7 @@ http://sunucu.info:8080/UTRzYlFkb3RySVVoeUFMR01QQ2VSeFkxcUlicmdFWEdwRDZ6bGM1eHlI
 http://sunucu.info:8080/UTRzYlFkb3RySVVoeUFMR01QQ2VSL2o1UnRlMVZWeUhsRzlqalcvOFZ3N2hiWXdtTUthRnlMOTVtU3k5bU9paA?output=ts
 #EXTINF:-1 tvg-id="360.tr" tvg-name="Tr: 360 HD" tvg-logo="https://imagizer.imageshack.com/img923/3913/XpB6lu.png" group-title="TR | ULUSAL ",TR: 360
 http://sunucu.info:8080/UTRzYlFkb3RySVVoeUFMR01QQ2VSOTFLZGxxK2hGcmxsMGF4NGhVdnJiMEszT3U1WXAyM1FmQk1lanVLMUJBbg?output=ts
-#EXTINF:-1 tvg-id="" tvg-name="Tr: BI Kanal HD" tvg-logo="https://imagizer.imageshack.com/img924/3991/ijPC3A.png" group-title="TR | ULUSAL ",TR: BI KANAL
+#EXTINF:-1 tvg-id="" tvg-name="Tr: BI Kanal HD" tvg-logo="https://imagizer.imageshack.com/img924/3991/ijPC3A.png" group-title="TR | ULUSAL ",TABII TV
 http://sunucu.info:8080/UTRzYlFkb3RySVVoeUFMR01QQ2VSM0pwOUNIQ0ZVQldTQUV6MEVFTzR0eUFCZ3lhZEtWMEZkMy9IZUw5MG0xYw?output=ts
 #EXTINF:-1 tvg-id="" tvg-name="Tr: TYT TURK HD" tvg-logo="https://tytturk.com/upload/tyt-logo.png" group-title="TR | ULUSAL ",TR: TYT TURK
 http://sunucu.info:8080/UTRzYlFkb3RySVVoeUFMR01QQ2VSMGFja1h6WjZkWHA4TUZzMjRoaVpTNnVmOW5YWUVlYlc2cUV3ZG1RQjdTOQ?output=ts
@@ -5841,31 +5841,31 @@ http://sunucu.info:8080/UTRzYlFkb3RySVVoeUFMR01QQ2VSeExIcXpwNCtTYlRBRllYbjJUNnRa
 http://sunucu.info:8080/UTRzYlFkb3RySVVoeUFMR01QQ2VSNlVBcmpNK3grZTJ3QzdLRXMram02bThTZmNsdjEzTUozODBqUXJvL2d1dQ?output=ts
 #EXTINF:-1 tvg-id="" tvg-name="----- (tr) Dsmart Kanallar----- HD" tvg-logo="http://xopen.xyz/wp-content/uploads/2019/06/TURKIYE_LOGO_SD.png" group-title="TR | SINEMA DSMART",(TR) DSMART KANALLAR
 http://sunucu.info:8080/UTRzYlFkb3RySVVoeUFMR01QQ2VSOU5sUXlrdDVIUXg4a281RDhBVFR6Q3Ruc2RZTFkwMmtNM2VQZ0hzMHIzag?output=ts
-#EXTINF:-1 tvg-id="" tvg-name="Tr: DS Sinema TV HD" tvg-logo="http://xopen.xyz/wp-content/uploads/2020/06/sinema_tv.png" group-title="TR | SINEMA DSMART",TR: DS SINEMA TV
+#EXTINF:-1 tvg-id="" tvg-name="Tr: DS Sinema TV HD" tvg-logo="http://xopen.xyz/wp-content/uploads/2020/06/sinema_tv.png" group-title="TR | SINEMA DSMART",TR: SINEMA TV
 http://sunucu.info:8080/UTRzYlFkb3RySVVoeUFMR01QQ2VSeklZdXRnRzRnL2FaSjI1ZDNUODVYM2RMaTEyejlFTVh5ZmtzU3NWSWwraQ?output=ts
-#EXTINF:-1 tvg-id="" tvg-name="Tr: DS Sinema TV 2 HD" tvg-logo="http://xopen.xyz/wp-content/uploads/2020/06/sinema_tv_2.png" group-title="TR | SINEMA DSMART",TR: DS SINEMA TV 2
+#EXTINF:-1 tvg-id="" tvg-name="Tr: DS Sinema TV 2 HD" tvg-logo="http://xopen.xyz/wp-content/uploads/2020/06/sinema_tv_2.png" group-title="TR | SINEMA DSMART",TR: SINEMA TV 2
 http://sunucu.info:8080/UTRzYlFkb3RySVVoeUFMR01QQ2VSMCtmUDdKdFZCdlRVQkZETEM2WkgyOEFUOTJwZ3A5QXZzamN0L2M0cUVHOQ?output=ts
 #EXTINF:-1 tvg-id="" tvg-name="Tr: DIZI Smart MAX HD" tvg-logo="http://xopen.xyz/wp-content/uploads/2020/06/dizismart_max.png" group-title="TR | SINEMA DSMART",TR: DIZI SMART MAX
 http://sunucu.info:8080/UTRzYlFkb3RySVVoeUFMR01QQ2VSN2tvREdMS0kwZFRSRDNRdVlWaDVUSlJpOWNnTWFSYjZCZmRRVDRyckpKcg?output=ts
-#EXTINF:-1 tvg-id="" tvg-name="Tr: DS Sinema TV Aksiyon 2 HD" tvg-logo="http://xopen.xyz/wp-content/uploads/2020/07/sinema_aksiyon2.png" group-title="TR | SINEMA DSMART",TR: DS SINEMA TV AKSIYON 2
+#EXTINF:-1 tvg-id="" tvg-name="Tr: DS Sinema TV Aksiyon 2 HD" tvg-logo="http://xopen.xyz/wp-content/uploads/2020/07/sinema_aksiyon2.png" group-title="TR | SINEMA DSMART",TR: SINEMA AKSIYON 2
 http://sunucu.info:8080/UTRzYlFkb3RySVVoeUFMR01QQ2VSMXpqNmZaa21iSDNJb1B4Ull3VHhpR1krK3JQVUZpNVRDbU91NFZGcURmYg?output=ts
-#EXTINF:-1 tvg-id="" tvg-name="Tr: DS Sinema TV 1001 HD" tvg-logo="http://xopen.xyz/wp-content/uploads/2020/06/sinema_1001.png" group-title="TR | SINEMA DSMART",TR: DS SINEMA TV 1001
+#EXTINF:-1 tvg-id="" tvg-name="Tr: DS Sinema TV 1001 HD" tvg-logo="http://xopen.xyz/wp-content/uploads/2020/06/sinema_1001.png" group-title="TR | SINEMA DSMART",TR: SINEMA 1001
 http://sunucu.info:8080/UTRzYlFkb3RySVVoeUFMR01QQ2VSOHJVN3RkVGJzSWx6MURjQ09LempKaXpyRkVlV1VjdGVLbXRyczByM1h6WQ?output=ts
-#EXTINF:-1 tvg-id="" tvg-name="Tr: DS Sinema TV 1002 HD" tvg-logo="http://xopen.xyz/wp-content/uploads/2020/07/sinema_1002.png" group-title="TR | SINEMA DSMART",TR: DS SINEMA TV 1002
+#EXTINF:-1 tvg-id="" tvg-name="Tr: DS Sinema TV 1002 HD" tvg-logo="http://xopen.xyz/wp-content/uploads/2020/07/sinema_1002.png" group-title="TR | SINEMA DSMART",TR: SINEMA 1002
 http://sunucu.info:8080/UTRzYlFkb3RySVVoeUFMR01QQ2VSOThWTnV0cS9WTXhDWkpKS0Q2THBOcHU2SXZjb1RHaUFWalQ4eGMxclIrVQ?output=ts
-#EXTINF:-1 tvg-id="" tvg-name="Tr: DS Sinema TV AILE HD" tvg-logo="http://xopen.xyz/wp-content/uploads/2020/07/sinema_aile.png" group-title="TR | SINEMA DSMART",TR: DS SINEMA TV AILE
+#EXTINF:-1 tvg-id="" tvg-name="Tr: DS Sinema TV AILE HD" tvg-logo="http://xopen.xyz/wp-content/uploads/2020/07/sinema_aile.png" group-title="TR | SINEMA DSMART",TR: SINEMA AILE
 http://sunucu.info:8080/UTRzYlFkb3RySVVoeUFMR01QQ2VSOEJucjJBK2hjbk5LOWRBUXVLS21TbE5UbndOamh1eWU0VDgwWXE1TXFzRA?output=ts
-#EXTINF:-1 tvg-id="" tvg-name="Tr: DS Sinema TV AILE 2 HD" tvg-logo="http://xopen.xyz/wp-content/uploads/2020/07/sinema_aile2.png" group-title="TR | SINEMA DSMART",TR: DS SINEMA TV AILE 2
+#EXTINF:-1 tvg-id="" tvg-name="Tr: DS Sinema TV AILE 2 HD" tvg-logo="http://xopen.xyz/wp-content/uploads/2020/07/sinema_aile2.png" group-title="TR | SINEMA DSMART",TR: SINEMA AILE 2
 http://sunucu.info:8080/UTRzYlFkb3RySVVoeUFMR01QQ2VSNHA3WTZXZmJnRlRsc2tPN0xOSktiNFVROFEvYjhLeVE4dkVPZm5pZU5WaQ?output=ts
-#EXTINF:-1 tvg-id="" tvg-name="Tr: DS Sinema TV Aksiyon HD" tvg-logo="http://xopen.xyz/wp-content/uploads/2020/07/sinema_aksiyon.png" group-title="TR | SINEMA DSMART",TR: DS SINEMA TV AKSIYON
+#EXTINF:-1 tvg-id="" tvg-name="Tr: DS Sinema TV Aksiyon HD" tvg-logo="http://xopen.xyz/wp-content/uploads/2020/07/sinema_aksiyon.png" group-title="TR | SINEMA DSMART",TR: SINEMA AKSIYON
 http://sunucu.info:8080/UTRzYlFkb3RySVVoeUFMR01QQ2VSL2p3R2Z0elNPSmRxL0VXaWxBR0dla0R4QVl3UkJCYVlTdVFqRzM0N1ptVQ?output=ts
 #EXTINF:-1 tvg-id="" tvg-name="Tr: Movie Smart TURK HD" tvg-logo="http://xopen.xyz/wp-content/uploads/2020/05/moviesmartturk.png" group-title="TR | SINEMA DSMART",TR: MOVIE SMART TURK
 http://sunucu.info:8080/UTRzYlFkb3RySVVoeUFMR01QQ2VSMHF1aW5oUGt5STRLek1xcUJGM3FsaGZBQ2IrWDluMmQvQzJSTmgvVThBdQ?output=ts
 #EXTINF:-1 tvg-id="" tvg-name="Tr: Movie Smart Classic HD" tvg-logo="http://xopen.xyz/wp-content/uploads/2020/05/moviesmartclassic.png" group-title="TR | SINEMA DSMART",TR: MOVIE SMART CLASSIC
 http://sunucu.info:8080/UTRzYlFkb3RySVVoeUFMR01QQ2VSK3lBd3ZPeFQwbVphaWlkckhGdVNwWVpUTnlWVnBhdEw0RmZSellGV1NDNw?output=ts
-#EXTINF:-1 tvg-id="" tvg-name="Tr: DS Sinema TV Komedi HD" tvg-logo="https://www.lyngsat-logo.com/logo/tv/ss/sinema-komedi-tr.png" group-title="TR | SINEMA DSMART",TR: DS SINEMA TV KOMEDI
+#EXTINF:-1 tvg-id="" tvg-name="Tr: DS Sinema TV Komedi HD" tvg-logo="https://www.lyngsat-logo.com/logo/tv/ss/sinema-komedi-tr.png" group-title="TR | SINEMA DSMART",TR: SINEMA KOMEDI
 http://sunucu.info:8080/UTRzYlFkb3RySVVoeUFMR01QQ2VSMUo5UzhUcjQvTzI2NFNkbVZDbVpvR05iZlU3M0xjekNidzJ2aG1uUkdVUA?output=ts
-#EXTINF:-1 tvg-id="" tvg-name="Tr: DS Sinema TV Komedi 2 HD" tvg-logo="https://www.lyngsat-logo.com/logo/tv/ss/sinema-komedi-2-tr.png" group-title="TR | SINEMA DSMART",TR: DS SINEMA TV KOMEDI 2
+#EXTINF:-1 tvg-id="" tvg-name="Tr: DS Sinema TV Komedi 2 HD" tvg-logo="https://www.lyngsat-logo.com/logo/tv/ss/sinema-komedi-2-tr.png" group-title="TR | SINEMA DSMART",TR: SINEMA KOMEDI 2
 http://sunucu.info:8080/UTRzYlFkb3RySVVoeUFMR01QQ2VSNUxINDVBNjdiNmlQcDVteGRQVDNwWWt6UWVzY1gzcjZrTVB1NXZMVzFuZw?output=ts
 #EXTINF:-1 tvg-id="" tvg-name="Tr: DIZI Smart Premium HD" tvg-logo="http://xopen.xyz/wp-content/uploads/2020/06/dizismart_premium.png" group-title="TR | SINEMA DSMART",TR: DIZI SMART PREMIUM
 http://sunucu.info:8080/UTRzYlFkb3RySVVoeUFMR01QQ2VSelBLd2cyWUlLSFNWU2l0b1p4d3NjUHFZL3FhZEtrdy9TcC9mSHdYaXc1cg?output=ts
