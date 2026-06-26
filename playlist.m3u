@@ -369,6 +369,155 @@ https://video-auth1.iol.pt/beachcam/bcfarolfaro/playlist.m3u8
 https://video-auth1.iol.pt/beachcam/bcmadeiraseixal/playlist.m3u8
 #EXTINF:-1,Madeira | Fajã da Areia
 https://video-auth1.iol.pt/beachcam/bcfaja/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",ŚWINOUJCIE - widok na Plaże i morze
+https://hoktastream4.webcamera.pl/swinoujscie_cam_3be0ba/swinoujscie_cam_3be0ba.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",ŚWINOUJCIE - widok na plażę
+https://hoktastream4.webcamera.pl/swinoujscie_cam_7eca1e/swinoujscie_cam_7eca1e.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",MIĘDZYZDROJE - widok na morze
+https://hoktastream1.webcamera.pl/miedzyzdroje_cam_613997/miedzyzdroje_cam_613997.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",Międzyzdroje - widok na wschodnią stronę plaży
+https://hoktastream1.webcamera.pl/miedzyzdroje_cam_52898b/miedzyzdroje_cam_52898b.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",Międzyzdroje - widok na plażę
+https://hoktastream1.webcamera.pl/miedzyzdroje_cam_bcc4fd/miedzyzdroje_cam_bcc4fd.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",Międzyzdroje - Molo Międzyzdroje
+https://streaming.airmax.pl/apiconnect4_molo1/index.m3u8
+#EXTINF:-1  group-title="Plaże",Międzywodzie - widok na plażę
+https://hoktastream3.webcamera.pl/miedzywodzie_cam_6b6996/miedzywodzie_cam_6b6996.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",Dziwnów - widok na Marinę
+https://hoktastream1.webcamera.pl/dziwnowum_cam_05f247/dziwnowum_cam_05f247.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",DZIWNÓW - widok na plażę
+https://hoktastream1.webcamera.pl/dziwnowum_cam_a4181f/dziwnowum_cam_a4181f.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",DZIWNÓWEK - widok na deptak
+https://hoktastream1.webcamera.pl/dziwnow_cam_175c61/dziwnow_cam_175c61.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",Pustkowo - widok na Krzyż Nadziei
+https://hoktastream1.webcamera.pl/gminarewal_cam_95ef9b/gminarewal_cam_95ef9b.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",TRZĘSACZ - widok na plażę
+https://hoktastream2.webcamera.pl/gminarewal_cam_635a3d/gminarewal_cam_635a3d.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",REWAL - widok na plażę
+https://hoktastream2.webcamera.pl/gminarewal_cam_a882c3/gminarewal_cam_a882c3.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",REWAL - widok na deptak
+https://hoktastream1.webcamera.pl/gminarewal_cam_a95d00/gminarewal_cam_a95d00.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",NIECHORZE - widok na plażę i morze
+https://hoktastream2.webcamera.pl/niechorzeplaza_cam_956637/niechorzeplaza_cam_956637.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",NIECHORZE - widok panoramiczny
+https://hoktastream1.webcamera.pl/rewal_cam_003f77/rewal_cam_003f77.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",MRZEŻYNO - widok na plażę
+https://hoktastream4.webcamera.pl/mrzezyno_cam_9c9575/mrzezyno_cam_9c9575.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",ROGOWO - widok na plażę
+https://hoktastream4.webcamera.pl/rogowo_cam_c81371/rogowo_cam_c81371.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",DŹWIRZYNO - widok na plażę
+https://hoktastream2.webcamera.pl/dzwirzyno_cam_59c728/dzwirzyno_cam_59c728.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",Grzybowo - widok na plażę
+https://hoktastream2.webcamera.pl/grzybowo_cam_31ad63/grzybowo_cam_31ad63.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",KOŁOBRZEG - widok na plażę zachodnią
+https://hoktastream4.webcamera.pl/kolobrzeg_cam_6df535/kolobrzeg_cam_6df535.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",KOŁOBRZEG - widok na molo i plażę
+https://hoktastream5.webcamera.pl/nocowanie_cam_a32dd1/nocowanie_cam_a32dd1.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",KOŁOBRZEG - widok na marinę
+https://hoktastream1.webcamera.pl/kolobrzegmarina_cam_967ce0/kolobrzegmarina_cam_967ce0.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",KOŁOBRZEG - widok na plażę
+https://hoktastream3.webcamera.pl/kolobrzeg_cam_c26ccc/kolobrzeg_cam_c26ccc.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",USTRONIE MORSKIE - widok na plażę
+https://hoktastream1.webcamera.pl/umustronie_cam_8305a4/umustronie_cam_8305a4.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",SARBINOWO - widok na plażę
+https://hoktastream3.webcamera.pl/sarbinowo_cam_390a25/sarbinowo_cam_390a25.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",SARBINOWO - widok na plażę
+https://hoktastream1.webcamera.pl/sarbinowo_cam_bd6ec8/sarbinowo_cam_bd6ec8.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",CHŁOPY - widok na kutry rybackie i morze
+https://hoktastream2.webcamera.pl/chlopy_cam_73ac3a/chlopy_cam_73ac3a.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",MIELNO - widok na plażę
+https://hoktastream4.webcamera.pl/mielno_cam_0e2e7c/mielno_cam_0e2e7c.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",ŁAZY - widok na plażę
+https://hoktastream4.webcamera.pl/lazy_cam_a0366d/lazy_cam_a0366d.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",Jezioro Bukowo oraz plaża
+https://hoktastream4.webcamera.pl/gmina_darlowo_cam_2d6aad/gmina_darlowo_cam_2d6aad.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",BOBOLIN - widok na plażę
+https://hoktastream4.webcamera.pl/gmina_darlowo_cam_2807ee/gmina_darlowo_cam_2807ee.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",DARŁOWO - widok na plażę wschodnią
+https://hoktastream1.webcamera.pl/darlowo_cam_dc4e72/darlowo_cam_dc4e72.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",WICIE - widok na deptak
+https://hoktastream4.webcamera.pl/gmina_darlowo_cam_705510/gmina_darlowo_cam_705510.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",Dubaj... w Jarosławcu
+https://hoktastream1.webcamera.pl/jaroslawiec_cam_bc9f03/jaroslawiec_cam_bc9f03.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",Jarosławiec - widok na deptak
+https://hoktastream3.webcamera.pl/jaroslawiec_cam_1cced2/jaroslawiec_cam_1cced2.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",Jarosławiec - widok na plażę
+https://hoktastream1.webcamera.pl/jaroslawiec_cam_40eca5/jaroslawiec_cam_40eca5.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",Jarosławiec - widok panoramiczny na morze
+https://hoktastream2.webcamera.pl/jarosprez_cam_fc31f4/jarosprez_cam_fc31f4.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",USTKA - widok z pylonu na część portową i plażę
+https://hoktastream1.webcamera.pl/ustka_cam_4b0fca/ustka_cam_4b0fca.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",USTKA - widok na Plaże
+https://hoktastream3.webcamera.pl/ustka_cam_104ebc/ustka_cam_104ebc.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",USTKA - widok na plażę
+https://hoktastream1.webcamera.pl/ustka_cam_4feffd/ustka_cam_4feffd.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",ROWY - widok na plażę i morze
+https://hoktastream3.webcamera.pl/gminaustka_cam_294fb0/gminaustka_cam_294fb0.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",ŁEBA - Kamera z widokiem na plażę i morze
+https://hoktastream4.webcamera.pl/leba_cam_0d3c03/leba_cam_0d3c03.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",Łeba - widok na plażę z Hotelu Neptun
+https://hoktastream1.webcamera.pl/leba_cam_863fcf/leba_cam_863fcf.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",LUBIATOWO PLAŻA
+https://hoktastream3.webcamera.pl/lubiatowo_cam_543fb2/lubiatowo_cam_543fb2.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",DĘBKI - widok na plażę
+https://hoktastream2.webcamera.pl/debki_cam_284a24/debki_cam_284a24.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",JASTRZĘBIA GÓRA - widok na plażę
+https://hoktastream1.webcamera.pl/wladyslawowo_cam_250100/wladyslawowo_cam_250100.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",CHŁAPOWO widok panoramiczny na morze
+https://hoktastream3.webcamera.pl/wladyslawowo_cam_2979bb/wladyslawowo_cam_2979bb.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",WŁADYSŁAWOWO - widok na plażę
+https://ls.tkchopin.pl/live/wladyslawowo_plaza_obrotowa.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",Władysławowo Małe Morze
+https://ls.tkchopin.pl/live/wladyslawowo_kemping_male_morze_molo_obrotowa.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",Karwia - widok na plażę
+https://hoktastream2.webcamera.pl/wladyslawowo_cam_3c51c2/wladyslawowo_cam_3c51c2.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",Puck - Zatoka Pucka
+https://ls.tkchopin.pl/live/puck_wieza_kosciola_zatokapucka_obrotowa.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",KUŹNICA - widok na plażę z wierzy kościoła
+https://hoktastream3.webcamera.pl/kuznica_cam_b7acd2/kuznica_cam_b7acd2.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",JASTARNIA - widok na Zatokę Pucką
+https://hoktastream2.webcamera.pl/jastarnia_cam_a14385/jastarnia_cam_a14385.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",JURATA - widok na Molo
+https://hoktastream1.webcamera.pl/jurata_cam_c060aa/jurata_cam_c060aa.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",Jurata - widok na plażę
+https://hoktastream4.webcamera.pl/jurata_cam_24f25d/jurata_cam_24f25d.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",HEL - widok na marinę
+https://hoktastream1.webcamera.pl/hel_cam_79fe71/hel_cam_79fe71.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",HEL - widok na bulwar i plażę
+https://hoktastream1.webcamera.pl/hel_cam_cf55ee/hel_cam_cf55ee.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",REWA - widok na Zatokę Puck
+https://hoktastream3.webcamera.pl/rewa_cam_c2a755/rewa_cam_c2a755.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",GDYNIA - widok na wejście do Portu Morskiego i terminal
+https://hoktastream1.webcamera.pl/gdynia_cam_e257dc/gdynia_cam_e257dc.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",GDYNIA - widok na Przystań Jachtową
+https://hoktastream1.webcamera.pl/gdynia_cam_b3ccea/gdynia_cam_b3ccea.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",GDYNIA - widok na plażę i marinę
+https://hoktastream1.webcamera.pl/gdynia_cam_b80d1e/gdynia_cam_b80d1e.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",SOPOT - widok z molo
+https://hoktastream1.webcamera.pl/sopot_cam_e1c28f/sopot_cam_e1c28f.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",SOPOT - widok na Monciak
+https://hoktastream2.webcamera.pl/sopot_cam_7b9f92/sopot_cam_7b9f92.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",Gdańsk Brzeźno - widok na Molo
+https://hoktastream5.webcamera.pl/gdansk_cam_77aeaf/gdansk_cam_77aeaf.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",Plaża Stogi w Gdańsku
+https://hoktastream2.webcamera.pl/umgdansk_cam_e25623/umgdansk_cam_e25623.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",SOPOT - widok na plażę
+https://hoktastream1.webcamera.pl/sopot_cam_5d1d8c/sopot_cam_5d1d8c.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",STEGNA - widok na plażę
+https://hoktastream4.webcamera.pl/stegna_cam_7e8d95/stegna_cam_7e8d95.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",JANTAR - widok na Plaże
+https://hoktastream3.webcamera.pl/jantar_cam_8948dd/jantar_cam_8948dd.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",KĄTY RYBACKIE - widok na plaże
+https://hoktastream1.webcamera.pl/katyrybackie_cam_2d3c0c/katyrybackie_cam_2d3c0c.stream/playlist.m3u8
+#EXTINF:-1  group-title="Plaże",KRYNICA MORSKA - widok na plaże
+https://hoktastream4.webcamera.pl/krynicamorska_cam_ba179a/krynicamorska_cam_ba179a.stream/playlist.m3u8
+
+#EXTINF:-1  group-title="TV",Kamery pogodowe z turystycznych miejsc w Polsce
+https://hoktastream2.webcamera.pl/tv_cam_656df8/tv_cam_656df8.stream/playlist.m3u8
+#EXTINF:-1  group-title="TV", Góry w Polsce
+https://hoktastream1.webcamera.pl/tv_cam_9bb83d/tv_cam_9bb83d.stream/playlist.m3u8
+#EXTINF:-1  group-title="TV",Najpiękniejsze Polskie Plaże
+https://hoktastream1.webcamera.pl/tv_cam_781381/tv_cam_781381.stream/playlist.m3u8
 #EXTINF:-1,Madeira | Paul do Mar
 https://video-auth1.iol.pt/beachcam/bcpauldomar2/playlist.m3u8
 #EXTINF:-1 group-title="*TÜRK_Webcam",Istanbul_AKOM - 25
