@@ -16,17 +16,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Adım 1: Canlı yayın linkini kazımak için gerekli Python ve Selenium araçlarını kuruyoruz
+      # Hata düzeltildi: 'python-python' yerine doğru olan 'python-version' yazıldı
       - name: Set up Python & Dependencies
         uses: actions/setup-python@v5
         with:
-          python-python: '3.10'
+          python-version: '3.10'
 
       - name: Install Scraping Tools
         run: |
           pip install selenium selenium-wire webdriver-manager
 
-      # Adım 2: Canlı kameranın linkini dinamik olarak çeken Python kodunu çalıştırıyoruz
       - name: Extract Live Camera M3U8
         run: |
           cat << 'EOF' > get_camera.py
@@ -40,12 +39,12 @@ jobs:
           options.add_argument('--no-sandbox')
           options.add_argument('--disable-dev-shm-usage')
 
-          # GitHub Actions sanal sunucusunda Chrome'u başlatıyoruz
+          # Sanal tarayıcıyı başlatıyoruz
           driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
           
           # Sunny Isles Beach Canlı Kamera Sayfası
           driver.get("https://sunnyislesbeachmiami.com")
-          time.sleep(12) # Oynatıcının ağ isteklerini yapması için bekleme süresi
+          time.sleep(12) # Sayfanın yüklenmesini bekle
 
           m3u8_url = ""
           for request in driver.requests:
@@ -66,7 +65,6 @@ jobs:
           EOF
           python get_camera.py
 
-      # Adım 3: Sizin orijinal listelerinizi indirip birleştirme mantığınızı yürütüyoruz
       - name: Build playlist
         run: |
           curl -L "https://githubusercontent.com" -o my_channels.m3u
@@ -74,12 +72,12 @@ jobs:
 
           echo "#EXTM3U" > playlist.m3u
 
-          # Önce yeni yakalanan canlı kamerayı listeye ekliyoruz (Varsa)
+          # Canlı kamerayı listeye ekliyoruz
           if [ -f camera.m3u ]; then
               cat camera.m3u >> playlist.m3u
           fi
 
-          # Sizin mevcut AWK tekilleştirme yapınız
+          # Sizin mevcut orijinal AWK tekilleştirme yapınız
           awk '
           /^#EXTINF/ {
               extinf=$0
@@ -95,11 +93,10 @@ jobs:
           # Geçici dosyaları temizleme
           rm -f my_channels.m3u remote.m3u camera.m3u get_camera.py
 
-      # Adım 4: Değişiklikleri otomatik olarak GitHub deponuza geri gönderiyoruz
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.email "41898282+github-actions[bot]@://github.com"
 
           git add playlist.m3u
 
