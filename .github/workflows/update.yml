@@ -3,7 +3,7 @@ name: Update Playlist
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 */3 * * *"
+    - cron: "0 */3 * * *" # Her 3 saatte bir otomatik çalışır
 
 permissions:
   contents: write
@@ -16,14 +16,70 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Adım 1: Canlı yayın linkini kazımak için gerekli Python ve Selenium araçlarını kuruyoruz
+      - name: Set up Python & Dependencies
+        uses: actions/setup-python@v5
+        with:
+          python-python: '3.10'
+
+      - name: Install Scraping Tools
+        run: |
+          pip install selenium selenium-wire webdriver-manager
+
+      # Adım 2: Canlı kameranın linkini dinamik olarak çeken Python kodunu çalıştırıyoruz
+      - name: Extract Live Camera M3U8
+        run: |
+          cat << 'EOF' > get_camera.py
+          import time
+          from seleniumwire import webdriver
+          from webdriver_manager.chrome import ChromeDriverManager
+          from selenium.webdriver.chrome.service import Service
+
+          options = webdriver.ChromeOptions()
+          options.add_argument('--headless')
+          options.add_argument('--no-sandbox')
+          options.add_argument('--disable-dev-shm-usage')
+
+          # GitHub Actions sanal sunucusunda Chrome'u başlatıyoruz
+          driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+          
+          # Sunny Isles Beach Canlı Kamera Sayfası
+          driver.get("https://sunnyislesbeachmiami.com")
+          time.sleep(12) # Oynatıcının ağ isteklerini yapması için bekleme süresi
+
+          m3u8_url = ""
+          for request in driver.requests:
+              if request.response and '.m3u8' in request.url and 'ozolio' in request.url:
+                  m3u8_url = request.url
+                  break
+
+          driver.quit()
+
+          # Bulunan linki m3u formatında geçici bir dosyaya kaydediyoruz
+          if m3u8_url:
+              with open("camera.m3u", "w") as f:
+                  f.write("#EXTINF:-1 tvg-id=\"SunnyIslesCam\" tvg-logo=\"https://sunnyislesbeachmiami.com\" group-title=\"Live Cams\",Miami Sunny Isles Beach Cam\n")
+                  f.write(m3u8_url + "\n")
+              print("Kamera linki basariyla yakalandi.")
+          else:
+              print("Kamera linki bulunamadi!")
+          EOF
+          python get_camera.py
+
+      # Adım 3: Sizin orijinal listelerinizi indirip birleştirme mantığınızı yürütüyoruz
       - name: Build playlist
         run: |
-          curl -L "https://raw.githubusercontent.com/tropicx24-commits/my_channels.m3u/main/playlist.m3u" -o my_channels.m3u
-
-          curl -L "https://raw.githubusercontent.com/batuhansabri55/AkcagozTV_Canli/main/tr.m3u" -o remote.m3u
+          curl -L "https://githubusercontent.com" -o my_channels.m3u
+          curl -L "https://githubusercontent.com" -o remote.m3u
 
           echo "#EXTM3U" > playlist.m3u
 
+          # Önce yeni yakalanan canlı kamerayı listeye ekliyoruz (Varsa)
+          if [ -f camera.m3u ]; then
+              cat camera.m3u >> playlist.m3u
+          fi
+
+          # Sizin mevcut AWK tekilleştirme yapınız
           awk '
           /^#EXTINF/ {
               extinf=$0
@@ -36,8 +92,10 @@ jobs:
           }
           ' my_channels.m3u remote.m3u >> playlist.m3u
 
-          rm -f my_channels.m3u remote.m3u
+          # Geçici dosyaları temizleme
+          rm -f my_channels.m3u remote.m3u camera.m3u get_camera.py
 
+      # Adım 4: Değişiklikleri otomatik olarak GitHub deponuza geri gönderiyoruz
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
@@ -48,6 +106,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes"
           else
-            git commit -m "Auto update playlist"
+            git commit -m "Auto update playlist with Live Cam"
             git push
           fi
