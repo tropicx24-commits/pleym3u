@@ -20,7 +20,7 @@ jobs:
         run: |
           curl -L "https://raw.githubusercontent.com/tropicx24-commits/my_channels.m3u/main/playlist.m3u" -o my_channels.m3u
 
-          curl -L "https://raw.githubusercontent.com/batuhansabri55/AkcagozTV_Canli/main/tr.m3u" -o remote.m3u
+          curl -L "https://raw.githubusercontent.com/batuhansabri55/AkcagozTV_Film/refs/heads/main/FilmDizi.m3u" -o remote.m3u
 
           echo "#EXTM3U" > playlist.m3u
 
