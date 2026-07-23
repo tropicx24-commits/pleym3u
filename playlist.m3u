@@ -13,24 +13,10 @@ https://moondigitaledge2.radyotvonline.net/radyo7muhtesem4lu/playlist.m3u8
 https://moondigitaledge2.radyotvonline.net/radyo7ankara/playlist.m3u8
 #EXTINF:-1,USKUDAR
 https://hls.ibb.gov.tr/ls/cam_turistik/b_uskudar.stream/playlist.m3u8
-#EXTINF:-1,DRAGOS
-https://hls.ibb.gov.tr/ls/cam_turistik/b_dragos.stream/playlist.m3u8
-#EXTINF:-1,DRAGOS
-https://hls.ibb.gov.tr/ls/cam_turistik/b_dragos.stream/chunklist.m3u8
-#EXTINF:-1,METROHAN
-https://hls.ibb.gov.tr/ls/cam_turistik/b_metrohan.stream/playlist.m3u8
-#EXTINF:-1,CAMLICA
-https://hls.ibb.gov.tr/ls/cam_turistik/b_buyukcaml\u0131ca.stream/playlist.m3u8
-#EXTINF:-1,SARAÇHANE
-https://hls3.ibb.gov.tr/ls/cam_turistik/b_sarachane.stream/chunklist.m3u8
-#EXTINF:-1,KAPALI ÇARŞI
-https://hls.ibb.gov.tr/ls/cam_turistik/b_kapalicarsi.stream/playlist.m3u8
 #EXTINF:-1,EMİNÖNÜ
 https://hls.ibb.gov.tr/ls/cam_turistik/b_eminonu.stream/playlist.m3u8
 #EXTINF:-1,EMİNONU
 https://hls.ibb.gov.tr/ls/cam_turistik/b_eminonu.stream/chunklist.m3u8
-#EXTINF:-1,KUZ KULESİ
-https://hls.ibb.gov.tr/ls/cam_turistik/cam_trsk_kiz_kulesi_1.stream/playlist.m3u8
 #EXTINF:-1,EYÜP SULTAN
 https://hls.ibb.gov.tr/ls/cam_turistik/b_eyupsultan.stream/playlist.m3u8
 #EXTINF:-1,KADIKÖY
@@ -39,8 +25,6 @@ https://hls.ibb.gov.tr/tkm1/hls/224.stream/playlist.m3u8
 https://hls.ibb.gov.tr/tkm1/hls/260.stream/playlist.m3u8
 #EXTINF:-1,K.KOY
 https://hls.ibb.gov.tr/tkm1/hls/204.stream/chunklist.m3u8
-#EXTINF:-1,DBAHCE
-https://hls.ibb.gov.tr/tkm4/hls/595.stream/chunklist.m3u8
 #EXTINF:-1,UNKAP
 https://hls.ibb.gov.tr/tkm2/hls/399.stream/chunklist.m3u8
 #EXTINF:-1,15TEM
@@ -49,8 +33,6 @@ https://hls.ibb.gov.tr/tkm2/hls/81.stream/chunklist.m3u8
 https://hls.ibb.gov.tr/tkm1/hls/193.stream/playlist.m3u8
 #EXTINF:-1,TAKSİM
 https://hls.ibb.gov.tr/ls/cam_turistik/b_taksim_meydan.stream/playlist.m3u8
-#EXTINF:-1,UNKAPANI2
-https://hls.ibb.gov.tr/tkm2/hls/400.stream/chunklist.m3u8
 #EXTINF:-1,FSKÖPRÜ
 https://hls.ibb.gov.tr/tkm1/hls/341.stream/chunklist.m3u8
 #EXTINF:-1,PERPA
@@ -73,8 +55,6 @@ https://hls.ibb.gov.tr/tkm1/hls/79.stream/media-ujdb1zi8d_2914.m3u
 https://cdn-002.whatsupcams.com/hls/hr_promajna01.m3u8
 #EXTINF:-1,NİZUC
 https://s40.ipcamlive.com/streams_timeshift/285cbf3053597caa2/stream.m3u8
-#EXTINF:-1,N2
-https://s40.ipcamlive.com/streams/28n6sgsd9xr8yziah/stream.m3u8
 #EXTINF:-1,ZİVOGECA
 https://cdn-004.whatsupcams.com/hls/hr_zivogosce02.m3u8
 #EXTINF:-1,BUDONİ
@@ -4251,4 +4231,3 @@ http://pro.most8knew.com:80/play/live.php?mac=00:1A:79:75:3A:21&stream=557142&ex
 http://pro.most8knew.com:80/play/live.php?mac=00:1A:79:75:3A:21&stream=557141&extension=ts&play_token=JrxyZaE0fp
 #EXTINF:-1 tvg-logo="http://photo-tmdb.com/stalker_portal/misc/logos/320/9795.jpg?79565" group-title="TR| TURKISH  NA",HABER GLOBAL
 http://pro.most8knew.com:80/play/live.php?mac=00:1A:79:75:3A:21&stream=557140&extension=ts&play_token=rNjjdqu43b
-https://video-auth8.iol.pt/live_tvi_reality/live_tvi_reality/edge_servers/tvireality-720_passthrough/chunks.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny8yMy8yMDI2IDU6Njo5IEFNJmhhc2hfdmFsdWU9VmVaS1AreG5YOCtXK1paRlJ1M01FZz09JnZhbGlkbWludXRlcz0xNDQwJmlkPThiOWE0NjQzLWJmM2ItNDg5ZS1hNTIzLTQ5NmU4YzQyNWE2Yw==
