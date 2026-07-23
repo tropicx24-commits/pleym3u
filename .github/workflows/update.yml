@@ -22,7 +22,7 @@ jobs:
 
           curl -L "https://raw.githubusercontent.com/batuhansabri55/AkcagozTV_Film/refs/heads/main/FilmDizi.m3u" -o remote.m3u
 
-          curl -L "https://raw.githubusercontent.com/LITUATUI/M3UPT/refs/heads/main/M3U/TVI_Reality.m3u8
+          curl -L "https://raw.githubusercontent.com/LITUATUI/M3UPT/refs/heads/main/M3U/TVI_Reality.m3u8" -o reality.m3u  
           
           echo "#EXTM3U" > playlist.m3u
 
