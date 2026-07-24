@@ -1,4 +1,4 @@
-- name: Build playlist
+name: Build playlist
   run: |
     echo "#EXTM3U" > playlist.m3u
 
