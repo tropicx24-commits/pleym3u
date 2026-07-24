@@ -1,83 +1,113 @@
-name: Build playlist
-  run: |
-    echo "#EXTM3U" > playlist.m3u
+name: Update Playlist
 
-    urls=(
-      "https://raw.githubusercontent.com/tropicx24-commits/my_channels.m3u/main/playlist.m3u"
-      "https://raw.githubusercontent.com/batuhansabri55/AkcagozTV_Film/main/FilmDizi.m3u"
-      "https://raw.githubusercontent.com/LITUATUI/M3UPT/refs/heads/main/M3U/TVI_Reality.m3u8"
-    )
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */3 * * *"
 
-    i=1
+permissions:
+  contents: write
 
-    for url in "${urls[@]}"; do
+jobs:
+  update:
+    runs-on: ubuntu-latest
 
-      echo "Downloading: $url"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
 
-      if ! curl -L --fail "$url" -o "tmp.m3u"; then
-          echo "FAILED"
-          continue
-      fi
+      - name: Build playlist
+        run: |
+          echo "#EXTM3U" > playlist.m3u
 
-      ###################################################
-      # Normal M3U Playlist
-      ###################################################
-      if grep -q "^#EXTINF" tmp.m3u; then
+          urls=(
+            "https://raw.githubusercontent.com/tropicx24-commits/my_channels.m3u/main/playlist.m3u"
+            "https://raw.githubusercontent.com/batuhansabri55/AkcagozTV_Film/main/FilmDizi.m3u"
+            "https://raw.githubusercontent.com/LITUATUI/M3UPT/refs/heads/main/M3U/TVI_Reality.m3u8"
+          )
 
+          for url in "${urls[@]}"; do
+
+            echo "Downloading: $url"
+
+            if ! curl -L --fail "$url" -o "tmp.m3u"; then
+                echo "FAILED"
+                continue
+            fi
+
+            ###################################################
+            # Normal M3U Playlist
+            ###################################################
+            if grep -q "^#EXTINF" tmp.m3u; then
+
+                awk '
+                /^#EXTINF/{
+                    extinf=$0
+                    getline stream
+                    gsub(/\r/, "", stream)
+
+                    if(!seen[stream]++){
+                        print extinf
+                        print stream
+                    }
+                }
+                ' tmp.m3u >> playlist.m3u
+
+            ###################################################
+            # Tek kanal HLS (.m3u8)
+            ###################################################
+            elif grep -q "^#EXT-X-STREAM-INF" tmp.m3u; then
+
+                name=$(basename "$url" .m3u8)
+                name=${name//_/ }
+
+                stream=$(grep '^https://' tmp.m3u | head -1)
+
+                if [ ! -z "$stream" ]; then
+                    echo "#EXTINF:-1,$name" >> playlist.m3u
+                    echo "$stream" >> playlist.m3u
+                fi
+
+            fi
+
+          done
+
+          rm -f tmp.m3u
+
+          ###################################################
+          # Aynı URL'leri tekrar sil
+          ###################################################
           awk '
-          /^#EXTINF/{
-              extinf=$0
-              getline stream
-              gsub(/\r/,"",stream)
-
-              if(!seen[stream]++){
-                  print extinf
-                  print stream
-              }
+          BEGIN{
+            print "#EXTM3U"
           }
-          ' tmp.m3u >> playlist.m3u
 
-      ###################################################
-      # Tek kanal HLS (.m3u8)
-      ###################################################
-      elif grep -q "^#EXT-X-STREAM-INF" tmp.m3u; then
+          /^#EXTINF/{
+            ext=$0
+            getline url
 
-          name=$(basename "$url" .m3u8)
-          name=${name//_/ }
+            if(!u[url]++){
+               print ext
+               print url
+            }
+          }
+          ' playlist.m3u > clean.m3u
 
-          stream=$(grep '^https://' tmp.m3u | head -1)
+          mv clean.m3u playlist.m3u
 
-          if [ ! -z "$stream" ]; then
-              echo "#EXTINF:-1,$name" >> playlist.m3u
-              echo "$stream" >> playlist.m3u
+          echo "Toplam kanal:"
+          grep -c "^#EXTINF" playlist.m3u
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add playlist.m3u
+
+          if git diff --staged --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Auto update playlist"
+            git push
           fi
-
-      fi
-
-    done
-
-    rm -f tmp.m3u
-
-    ###################################################
-    # Aynı URL'leri tekrar sil
-    ###################################################
-    awk '
-    BEGIN{
-      print "#EXTM3U"
-    }
-
-    /^#EXTINF/{
-      ext=$0
-      getline url
-
-      if(!u[url]++){
-         print ext
-         print url
-      }
-    }
-    ' playlist.m3u > clean.m3u
-
-    mv clean.m3u playlist.m3u
-
-    echo "Toplam kanal:"
-    grep -c "^#EXTINF" playlist.m3u
