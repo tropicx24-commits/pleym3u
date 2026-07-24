@@ -1,21 +1,38 @@
+name: Update Playlist
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */3 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
       - name: Build playlist
-       
+        run: |
           echo "#EXTM3U" > playlist.m3u
 
-          while IFS= read -r url || [ -n "$url" ]; do
+          urls=(
+            "https://raw.githubusercontent.com/tropicx24-commits/my_channels.m3u/main/playlist.m3u"
+            "https://raw.githubusercontent.com/batuhansabri55/AkcagozTV_Film/main/FilmDizi.m3u"
+            "https://raw.githubusercontent.com/LITUATUI/M3UPT/refs/heads/main/M3U/TVI_Reality.m3u8"
+          )
 
-            # Boş satırları geç
-           [ -z "$url" ] && continue
+          for url in "${urls[@]}"; do
 
-            # Yorum satırlarını geç
-            [[ "$url" =~ ^# ]] && continue
-
-            echo "===================================="
             echo "Downloading: $url"
 
             if ! curl -L --fail "$url" -o "tmp.m3u"; then
-              echo "FAILED"
-              continue
+                echo "FAILED"
+                continue
             fi
 
             ###################################################
@@ -23,37 +40,37 @@
             ###################################################
             if grep -q "^#EXTINF" tmp.m3u; then
 
-              awk '
-              /^#EXTINF/{
-                  extinf=$0
-                  getline stream
-                  gsub(/\r/,"",stream)
+                awk '
+                /^#EXTINF/{
+                    extinf=$0
+                    getline stream
+                    gsub(/\r/, "", stream)
 
-                  if(!seen[stream]++){
-                      print extinf
-                      print stream
-                  }
-              }
-              ' tmp.m3u >> playlist.m3u
+                    if(!seen[stream]++){
+                        print extinf
+                        print stream
+                    }
+                }
+                ' tmp.m3u >> playlist.m3u
 
             ###################################################
             # Tek kanal HLS (.m3u8)
             ###################################################
             elif grep -q "^#EXT-X-STREAM-INF" tmp.m3u; then
 
-              name=$(basename "$url" .m3u8)
-              name=${name//_/ }
+                name=$(basename "$url" .m3u8)
+                name=${name//_/ }
 
-              stream=$(grep '^https://' tmp.m3u | head -1)
+                stream=$(grep '^https://' tmp.m3u | head -1)
 
-              if [ -n "$stream" ]; then
-                echo "#EXTINF:-1,$name" >> playlist.m3u
-                echo "$stream" >> playlist.m3u
-              fi
+                if [ ! -z "$stream" ]; then
+                    echo "#EXTINF:-1,$name" >> playlist.m3u
+                    echo "$stream" >> playlist.m3u
+                fi
 
             fi
 
-          done < sources.txt
+          done
 
           rm -f tmp.m3u
 
@@ -62,22 +79,35 @@
           ###################################################
           awk '
           BEGIN{
-              print "#EXTM3U"
+            print "#EXTM3U"
           }
 
           /^#EXTINF/{
-              ext=$0
-              getline url
+            ext=$0
+            getline url
 
-              if(!u[url]++){
-                  print ext
-                  print url
-              }
+            if(!u[url]++){
+               print ext
+               print url
+            }
           }
           ' playlist.m3u > clean.m3u
 
           mv clean.m3u playlist.m3u
 
-          echo ""
           echo "Toplam kanal:"
           grep -c "^#EXTINF" playlist.m3u
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add playlist.m3u
+
+          if git diff --staged --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Auto update playlist"
+            git push
+          fi
