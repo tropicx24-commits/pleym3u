@@ -32,6 +32,7 @@ jobs:
                  echo "FAILED"
                  continue
               fi
+            done < sources.txt  
             echo "Downloading: $url"
 
             if ! curl -L --fail "$url" -o "tmp.m3u"; then
