@@ -14,30 +14,53 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Build playlist
         run: |
-          curl -L "https://raw.githubusercontent.com/tropicx24-commits/my_channels.m3u/main/playlist.m3u" -o my_channels.m3u
-
-          curl -L "https://raw.githubusercontent.com/batuhansabri55/AkcagozTV_Film/refs/heads/main/FilmDizi.m3u" -o remote.m3u
-
-                
           echo "#EXTM3U" > playlist.m3u
 
-          awk '
-          /^#EXTINF/ {
-              extinf=$0
-              getline url
+          urls=(
+            "https://raw.githubusercontent.com/tropicx24-commits/my_channels.m3u/main/playlist.m3u"
+            "https://raw.githubusercontent.com/batuhansabri55/AkcagozTV_Film/main/FilmDizi.m3u"
+            "https://https://raw.githubusercontent.com/LITUATUI/M3UPT/refs/heads/main/M3U/TVI_Reality.m3u8"
+          )
 
-              if (!seen[url]++) {
-                  print extinf
-                  print url
-              }
-          }
-          ' my_channels.m3u remote.m3u >> playlist.m3u
+          i=1
+          files=()
 
-          rm -f my_channels.m3u remote.m3u
+          for url in "${urls[@]}"; do
+            echo "----------------------------------------"
+            echo "Downloading: $url"
+
+            if curl -L --fail "$url" -o "list$i.m3u"; then
+              echo "OK"
+              files+=("list$i.m3u")
+              i=$((i+1))
+            else
+              echo "FAILED"
+            fi
+          done
+
+          if [ ${#files[@]} -gt 0 ]; then
+            awk '
+            /^#EXTINF/{
+                extinf=$0
+                getline url
+                gsub(/\r/,"",url)
+
+                if(!seen[url]++){
+                    print extinf
+                    print url
+                }
+            }' "${files[@]}" >> playlist.m3u
+          fi
+
+          echo ""
+          echo "Toplam kanal:"
+          grep -c "^#EXTINF" playlist.m3u || true
+
+          rm -f list*.m3u
 
       - name: Commit changes
         run: |
