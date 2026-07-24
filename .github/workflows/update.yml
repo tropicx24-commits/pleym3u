@@ -23,7 +23,7 @@ jobs:
           urls=(
             "https://raw.githubusercontent.com/tropicx24-commits/my_channels.m3u/main/playlist.m3u"
             "https://raw.githubusercontent.com/batuhansabri55/AkcagozTV_Film/main/FilmDizi.m3u"
-            "https://https://raw.githubusercontent.com/LITUATUI/M3UPT/refs/heads/main/M3U/TVI_Reality.m3u8"
+            "https://raw.githubusercontent.com/LITUATUI/M3UPT/refs/heads/main/M3U/TVI_Reality.m3u8"
           )
 
           i=1
