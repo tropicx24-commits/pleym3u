@@ -20,14 +20,18 @@ jobs:
         run: |
           echo "#EXTM3U" > playlist.m3u
 
-          urls=(
-            "https://raw.githubusercontent.com/tropicx24-commits/my_channels.m3u/main/playlist.m3u"
-            "https://raw.githubusercontent.com/batuhansabri55/AkcagozTV_Film/main/FilmDizi.m3u"
-            "https://raw.githubusercontent.com/LITUATUI/M3UPT/refs/heads/main/M3U/TVI_Reality.m3u8"
-          )
+          while IFS= read -r url || [ -n "$url" ]; do
+            # Boş satırları geç
+            [ -z "$url" ] && continue
+            # Yorum satırlarını geç
+            [[ "$url" =~ ^# ]] && continue
 
-          for url in "${urls[@]}"; do
+            echo "Downloading: $url"
 
+              if ! curl -L --fail "$url" -o "tmp.m3u"; then
+                 echo "FAILED"
+                 continue
+              fi
             echo "Downloading: $url"
 
             if ! curl -L --fail "$url" -o "tmp.m3u"; then
