@@ -4716,4 +4716,4 @@ http://mag.tivi-one-iptv.net:80/play/live.php?mac=00:1A:79:F5:CE:BF&stream=21046
 #EXTINF:-1 tvg-logo="http://picon.tivi-ott.net:25461/picon/TURKEY/tv5.png" group-title="DINI",TV5
 http://mag.tivi-one-iptv.net:80/play/live.php?mac=00:1A:79:F5:CE:BF&stream=210462&extension=ts&play_token=KSZIvDyc2v
 #EXTINF:-1,TVI Reality
-https://video-auth8.iol.pt/live_tvi_reality/live_tvi_reality/edge_servers/tvireality-720_passthrough/chunks.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny8yNy8yMDI2IDk6OTo5IEFNJmhhc2hfdmFsdWU9Uk01bGgwTGJic0h2OTZ0c09tZ2o4Zz09JnZhbGlkbWludXRlcz0xNDQwJmlkPWViZjE1NDAwLTM0NzMtNDg4MC04YTkzLWZmNjZjZDlhOTQ4Zg==
+https://video-auth8.iol.pt/live_tvi_reality/live_tvi_reality/edge_servers/tvireality-720_passthrough/chunks.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny8yNy8yMDI2IDE6NTo0NiBQTSZoYXNoX3ZhbHVlPXJRM3Q4dDJuOWxlVDlPaXVhQkhKWWc9PSZ2YWxpZG1pbnV0ZXM9MTQ0MCZpZD03M2YzZmU1ZC0wMTNlLTQxN2QtYjU3YS03ZDVhZmQyMzMwZWQ=
