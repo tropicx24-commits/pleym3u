@@ -1155,7 +1155,7 @@ http://line.tvdsz.cc/play/live.php?mac=00%3A1A%3A79%3AB5%3ACD%3A60&stream=147168
 http://line.tvdsz.cc/play/live.php?mac=00%3A1A%3A79%3AB5%3ACD%3A60&stream=1471684&extension=ts
 #EXTINF:-1 tvg-id="" tvg-name="┃TR┃ MOVIESMART TÜRK" group-title="┃TR┃ SINEMA PLATFORM",MOVIESMART
 http://line.tvdsz.cc/play/live.php?mac=00%3A1A%3A79%3AB5%3ACD%3A60&stream=1471685&extension=ts
-#EXTINF:-1 tvg-id="" tvg-name="┃TR┃ SINEMA TVSINEMA TV" group-title="┃TR┃ SINEMA PLATFORM",SINEMA TVSINEMA TV
+#EXTINF:-1 tvg-id="" tvg-name="┃TR┃ SINEMA TVSINEMA TV" group-title="┃TR┃ SINEMA PLATFORM",SINEMA TV
 http://line.tvdsz.cc/play/live.php?mac=00%3A1A%3A79%3AB5%3ACD%3A60&stream=1471688&extension=ts
 #EXTINF:-1 tvg-id="" tvg-name="┃TR┃ SINEMA TV 2" group-title="┃TR┃ SINEMA PLATFORM",SINEMA TV 2
 http://line.tvdsz.cc/play/live.php?mac=00%3A1A%3A79%3AB5%3ACD%3A60&stream=1471689&extension=ts
@@ -1191,9 +1191,9 @@ http://line.tvdsz.cc/play/live.php?mac=00%3A1A%3A79%3AB5%3ACD%3A60&stream=197154
 http://line.tvdsz.cc/play/live.php?mac=00%3A1A%3A79%3AB5%3ACD%3A60&stream=197153&extension=ts
 #EXTINF:-1 tvg-id="" tvg-name="┃TR┃ BEIN BOX OFFICE 3" group-title="┃TR┃ SINEMA YABANCI",BEIN BOX OFFICE 3
 http://line.tvdsz.cc/play/live.php?mac=00%3A1A%3A79%3AB5%3ACD%3A60&stream=197152&extension=ts
-#EXTINF:-1 tvg-id="" tvg-name="┃TR┃ BEIN MOVIES PREMIERE 1" group-title="┃TR┃ SINEMA YABANCI",BEIN MOVIES PREMIERE 1
+#EXTINF:-1 tvg-id="" tvg-name="┃TR┃ BEIN MOVIES PREMIERE 1" group-title="┃TR┃ SINEMA YABANCI",BEIN MOVIES PREMIERE
 http://line.tvdsz.cc/play/live.php?mac=00%3A1A%3A79%3AB5%3ACD%3A60&stream=197143&extension=ts
-#EXTINF:-1 tvg-id="" tvg-name="┃TR┃ BEIN MOVIES PREMIERE 2" group-title="┃TR┃ SINEMA YABANCI",BEIN MOVIES PREMIERE 2
+#EXTINF:-1 tvg-id="" tvg-name="┃TR┃ BEIN MOVIES PREMIERE 2" group-title="┃TR┃ SINEMA YABANCI",BEIN MOVIES PREMIER 2
 http://line.tvdsz.cc/play/live.php?mac=00%3A1A%3A79%3AB5%3ACD%3A60&stream=197142&extension=ts
 #EXTINF:-1 tvg-id="" tvg-name="┃TR┃ BEIN MOVIES STARS" group-title="┃TR┃ SINEMA YABANCI",BEIN MOVIES STARS
 http://line.tvdsz.cc/play/live.php?mac=00%3A1A%3A79%3AB5%3ACD%3A60&stream=197149&extension=ts
@@ -4648,4 +4648,4 @@ http://mag.tivi-one-iptv.net:80/play/live.php?mac=00:1A:79:F5:CE:BF&stream=21046
 #EXTINF:-1 tvg-logo="http://picon.tivi-ott.net:25461/picon/TURKEY/tv5.png" group-title="DINI",TV5
 http://mag.tivi-one-iptv.net:80/play/live.php?mac=00:1A:79:F5:CE:BF&stream=210462&extension=ts&play_token=KSZIvDyc2v
 #EXTINF:-1,TVI Reality
-https://video-auth8.iol.pt/live_tvi_reality/live_tvi_reality/edge_servers/tvireality-720_passthrough/chunks.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny8yOC8yMDI2IDQ6MzM6NDggUE0maGFzaF92YWx1ZT1WU29WQnBPdy8xbTJNdWZCc0dUU0FnPT0mdmFsaWRtaW51dGVzPTE0NDAmaWQ9NGMzMWMwYjItMDdiMC00MmMyLTg4YjktMWEzNTJiMDhkNmQ5
+https://video-auth8.iol.pt/live_tvi_reality/live_tvi_reality/edge_servers/tvireality-720_passthrough/chunks.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny8yOC8yMDI2IDg6Mjc6NDQgUE0maGFzaF92YWx1ZT1ydVYrZmp3TGd0ODJvYk5MdFBRSnNRPT0mdmFsaWRtaW51dGVzPTE0NDAmaWQ9NTM2MTA1ZjgtNGYxZC00NzA5LWJlMDMtZjdhOGMyODA3Yzhk
