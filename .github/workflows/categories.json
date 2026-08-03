@@ -1,72 +1,37 @@
 {
   "Haber": [
-    "A Haber",
-    "CNN",
-    "NTV",
-    "TRT Haber",
-    "Habertürk",
-    "TGRT Haber"
+    "TRT HABER","ULKETV","Haber Global","TVNet","A HABER","CNN","NTV","Akit TV","Habertürk","TGRT Haber","TV100","KANAL 24","BBC News","Al Jazeera"
   ],
 
   "Ulusal": [
-    "ATV",
-    "Kanal D",
-    "Show TV",
-    "Star TV",
-    "NOW",
-    "TV8",
-    "TRT 1"
+    "TRT 1","ATV","Kanal D","Show TV","Star TV","NOW","EKOLTV","TV8","360","Kanal 7","TV 8.5"
   ],
 
   "Spor": [
-    "TRT Spor",
-    "A Spor",
-    "beIN",
-    "Eurosport",
-    "S Sport"
+    "TRT Spor","TRT Spor Yıldız","A Spor","S Sport","Eurosport","beIN","Sport TV","Sky Sport","ESPN"
   ],
 
   "Çocuk": [
-    "TRT Çocuk",
-    "Minika",
-    "Cartoon",
-    "Nick",
-    "Disney"
+    "TRT Çocuk","Minika","Cartoon","Nick","Disney","BabyTV","Boomerang","Da Vinci"
   ],
 
   "Film": [
-    "Movie",
-    "Cinema",
-    "Film"
+    "Movie","Cinema","Film","Sinema","HBO","Cinemax"
   ],
 
   "Belgesel": [
-    "Discovery",
-    "National Geographic",
-    "History",
-    "Animal Planet"
+    "Discovery","National Geographic","History","Animal Planet","Viasat History","Love Nature"
   ],
 
   "Müzik": [
-    "Power",
-    "Dream",
-    "Kral",
-    "MTV"
+    "Power","Dream","Kral","MTV","Number One","NR1","Music"
   ],
 
   "Radyo": [
-    "Radyo",
-    "Radio",
-    "FM"
+    "Radyo","Radio","FM"
   ],
 
   "WebCam": [
-    "Webcam",
-    "Beach",
-    "Camera",
-    "Live Cam",
-    "Port",
-    "Harbour",
-    "Marina"
+    "Webcam","Beach","Camera","Live Cam","Port","Harbour","Marina","Traffic","Square"
   ]
 }
