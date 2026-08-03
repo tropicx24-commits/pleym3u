@@ -89,8 +89,9 @@ jobs:
           grep -c "^#EXTINF" playlist.m3u
 
      
-      - name: Categorize playlist
-        run: python categorize.py
+      # Bunları categorize.py hazır olunca açacağız
+      # - name: Categorize playlist
+      #   run: python categorize.py
 
       - name: Commit changes
         run: |
