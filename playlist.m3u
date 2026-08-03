@@ -3982,7 +3982,7 @@ http://46.20.3.231:80/;
 #EXTINF:-1 tvg-logo="https://r.resimlink.com/6Uea_.webp" group-title="RADYO",KRAL FM
 https://dygedge2.radyotvonline.net/kralfm/playlist.m3u8?listeningSessionID=689a71b34a7d0fef_650218_ELAz7Pop__000000061yg&downloadSessionID=0&listenerid=3239e3f5e40f1819ee16c17a3a5f5b3e&awparams=companionAds%3Atrue
 #EXTINF:-1,TVI Reality
-https://video-auth7.iol.pt/live_tvi_reality/live_tvi_reality/edge_servers/tvireality-720_passthrough/chunks.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9OC8yLzIwMjYgODoyMTo1OCBQTSZoYXNoX3ZhbHVlPWRHTEdQSm5EQlUrSkZtRWRZSlhlN1E9PSZ2YWxpZG1pbnV0ZXM9MTQ0MCZpZD1jNmEzMDE0Yi05OTk5LTQyMGQtODdiYi1iOGIyYTM5ODk1NTE=
+https://video-auth7.iol.pt/live_tvi_reality/live_tvi_reality/edge_servers/tvireality-720_passthrough/chunks.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9OC8zLzIwMjYgMTI6MzY6MzkgQU0maGFzaF92YWx1ZT0rVHpKMVlVRFBFaFNrNVprSmpQVEJnPT0mdmFsaWRtaW51dGVzPTE0NDAmaWQ9OWY0ZjYyZWMtYjUwMy00MTBlLWFiYTktZWY1Zjc0YjkzMDU0
 #EXTINF:-1 tvg-id="51" tvg-name="7 Live Sports & Entertainment Channels All A B C D E F G H I J K L M N O P Q R S T U V W X Y Z ABC USA", 7 Live Sports & Entertainment Channels All A B C D E F G H I J K L M N O P Q R S T U V W X Y Z ABC USA
 https://breakable-brenn-piratescorporation-622824b8.koyeb.app/proxy/manifest.m3u8?url=https%3A%2F%2Fdlhd.st%2Fstream%2Fstream-51.php&h_User-Agent=Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F120.0.0.0%20Safari%2F537.36&h_Referer=https://dlhd.st/
 #EXTINF:-1 tvg-id="283" tvg-name="Antenna TV USA", Antenna TV USA
