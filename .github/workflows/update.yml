@@ -1,24 +1,6 @@
-name: Update Playlist
-
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: "0 */3 * * *"
-
-permissions:
-  contents: write
-
-jobs:
-  update:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v5
-
       - name: Build playlist
         run: |
-          echo "#EXTM3U" > playlist.m3u
+          echo "#EXTM3U" > playlist_raw.m3u
 
           urls=(
             "https://raw.githubusercontent.com/tropicx24-commits/my_channels.m3u/main/playlist.m3u"
@@ -32,42 +14,36 @@ jobs:
             echo "Downloading: $url"
 
             if ! curl -L --fail "$url" -o "tmp.m3u"; then
-                echo "FAILED"
-                continue
+              echo "FAILED"
+              continue
             fi
 
-            ###################################################
-            # Normal M3U Playlist
-            ###################################################
             if grep -q "^#EXTINF" tmp.m3u; then
 
-                awk '
-                /^#EXTINF/{
-                    extinf=$0
-                    getline stream
-                    gsub(/\r/, "", stream)
+              awk '
+              /^#EXTINF/{
+                extinf=$0
+                getline stream
+                gsub(/\r/, "", stream)
 
-                    if(!seen[stream]++){
-                        print extinf
-                        print stream
-                    }
+                if(!seen[stream]++){
+                  print extinf
+                  print stream
                 }
-                ' tmp.m3u >> playlist.m3u
+              }
+              ' tmp.m3u >> playlist_raw.m3u
 
-            ###################################################
-            # Tek kanal HLS (.m3u8)
-            ###################################################
             elif grep -q "^#EXT-X-STREAM-INF" tmp.m3u; then
 
-                name=$(basename "$url" .m3u8)
-                name=${name//_/ }
+              name=$(basename "$url" .m3u8)
+              name=${name//_/ }
 
-                stream=$(grep '^https://' tmp.m3u | head -1)
+              stream=$(grep '^https://' tmp.m3u | head -1)
 
-                if [ ! -z "$stream" ]; then
-                    echo "#EXTINF:-1,$name" >> playlist.m3u
-                    echo "$stream" >> playlist.m3u
-                fi
+              if [ ! -z "$stream" ]; then
+                echo "#EXTINF:-1,$name" >> playlist_raw.m3u
+                echo "$stream" >> playlist_raw.m3u
+              fi
 
             fi
 
@@ -75,29 +51,32 @@ jobs:
 
           rm -f tmp.m3u
 
-          ###################################################
-          # Aynı URL'leri tekrar sil
-          ###################################################
           awk '
-          BEGIN{
-            print "#EXTM3U"
-          }
+          BEGIN{print "#EXTM3U"}
 
           /^#EXTINF/{
             ext=$0
             getline url
 
             if(!u[url]++){
-               print ext
-               print url
+              print ext
+              print url
             }
           }
-          ' playlist.m3u > clean.m3u
+          ' playlist_raw.m3u > clean.m3u
 
           mv clean.m3u playlist.m3u
 
           echo "Toplam kanal:"
           grep -c "^#EXTINF" playlist.m3u
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Categorize playlist
+        run: python categorize.py
 
       - name: Commit changes
         run: |
@@ -109,6 +88,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes"
           else
-            git commit -m "Auto update playlist"
+            git commit -m "Auto update & categorize playlist"
             git push
           fi
