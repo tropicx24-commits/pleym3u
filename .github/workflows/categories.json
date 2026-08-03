@@ -1,0 +1,72 @@
+{
+  "Haber": [
+    "A Haber",
+    "CNN",
+    "NTV",
+    "TRT Haber",
+    "Habertürk",
+    "TGRT Haber"
+  ],
+
+  "Ulusal": [
+    "ATV",
+    "Kanal D",
+    "Show TV",
+    "Star TV",
+    "NOW",
+    "TV8",
+    "TRT 1"
+  ],
+
+  "Spor": [
+    "TRT Spor",
+    "A Spor",
+    "beIN",
+    "Eurosport",
+    "S Sport"
+  ],
+
+  "Çocuk": [
+    "TRT Çocuk",
+    "Minika",
+    "Cartoon",
+    "Nick",
+    "Disney"
+  ],
+
+  "Film": [
+    "Movie",
+    "Cinema",
+    "Film"
+  ],
+
+  "Belgesel": [
+    "Discovery",
+    "National Geographic",
+    "History",
+    "Animal Planet"
+  ],
+
+  "Müzik": [
+    "Power",
+    "Dream",
+    "Kral",
+    "MTV"
+  ],
+
+  "Radyo": [
+    "Radyo",
+    "Radio",
+    "FM"
+  ],
+
+  "WebCam": [
+    "Webcam",
+    "Beach",
+    "Camera",
+    "Live Cam",
+    "Port",
+    "Harbour",
+    "Marina"
+  ]
+}
