@@ -1,0 +1,107 @@
+name: Update Playlist
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */3 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build playlist
+        shell: bash
+        run: |
+          echo "#EXTM3U" > playlist_raw.m3u
+
+          urls=(
+            "https://raw.githubusercontent.com/tropicx24-commits/my_channels.m3u/main/playlist.m3u"
+            "https://raw.githubusercontent.com/batuhansabri55/AkcagozTV_Film/main/FilmDizi.m3u"
+            "https://raw.githubusercontent.com/LITUATUI/M3UPT/refs/heads/main/M3U/TVI_Reality.m3u8"
+            "https://raw.githubusercontent.com/Lonestar1306/iptv-auto-playlists/refs/heads/main/daddylive.m3u"
+          )
+
+          for url in "${urls[@]}"; do
+            echo "Downloading: $url"
+
+            if ! curl -L --fail "$url" -o tmp.m3u; then
+              echo "Failed: $url"
+              continue
+            fi
+
+            if grep -q "^#EXTINF" tmp.m3u; then
+
+              awk '
+              /^#EXTINF/{
+                  ext=$0
+                  getline stream
+                  gsub(/\r/, "", stream)
+
+                  if(!seen[stream]++){
+                      print ext
+                      print stream
+                  }
+              }' tmp.m3u >> playlist_raw.m3u
+
+            elif grep -q "^#EXT-X-STREAM-INF" tmp.m3u; then
+
+              name=$(basename "$url" .m3u8)
+              name=${name//_/ }
+
+              stream=$(grep '^https://' tmp.m3u | head -1)
+
+              if [ -n "$stream" ]; then
+                echo "#EXTINF:-1,$name" >> playlist_raw.m3u
+                echo "$stream" >> playlist_raw.m3u
+              fi
+
+            fi
+          done
+
+          rm -f tmp.m3u
+
+          awk '
+          BEGIN { print "#EXTM3U" }
+
+          /^#EXTINF/{
+              ext=$0
+              getline url
+
+              if(!u[url]++){
+                  print ext
+                  print url
+              }
+          }' playlist_raw.m3u > playlist.m3u
+
+          echo "Toplam kanal:"
+          grep -c "^#EXTINF" playlist.m3u
+
+     
+        name: Categorize playlist
+        run: python categorize.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add playlist.m3u
+
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Auto update playlist"
+            git push
+          fi
