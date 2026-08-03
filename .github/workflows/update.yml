@@ -88,9 +88,9 @@ jobs:
           echo "Toplam kanal:"
           grep -c "^#EXTINF" playlist.m3u
 
-      # Bunları categorize.py hazır olunca açacağız
-      # - name: Categorize playlist
-      #   run: python categorize.py
+     
+      - name: Categorize playlist
+        run: python categorize.py
 
       - name: Commit changes
         run: |
