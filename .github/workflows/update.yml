@@ -21,11 +21,31 @@ jobs:
         run: |
           echo "#EXTM3U" > playlist.m3u
 
-          urls=(
-            "https://raw.githubusercontent.com/tropicx24-commits/my_channels.m3u/main/playlist.m3u"
-            "https://raw.githubusercontent.com/batuhansabri55/AkcagozTV_Film/main/FilmDizi.m3u"
-            "https://raw.githubusercontent.com/Lonestar1306/iptv-auto-playlists/refs/heads/main/daddylive.m3u"
-          )
+          while IFS= read -r url || [ -n "$url" ]; do
+
+            [ -z "$url" ] && continue
+
+            echo "Downloading: $url"
+
+            if ! curl -L --fail "$url" -o tmp.m3u; then
+                echo "Failed"
+                continue
+            fi
+
+            awk '
+            /^#EXTINF/{
+                ext=$0
+                getline stream
+                gsub(/\r/, "", stream)
+
+                if(!seen[stream]++){
+                    print ext
+                    print stream
+                }
+            }
+            ' tmp.m3u >> playlist.m3u
+
+          done < sources.txt
 
           for url in "${urls[@]}"; do
             echo "Downloading: $url"
