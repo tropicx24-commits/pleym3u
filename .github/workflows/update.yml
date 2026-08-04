@@ -46,30 +46,7 @@ jobs:
             ' tmp.m3u >> playlist.m3u
 
           done < sources.txt
-
-          for url in "${urls[@]}"; do
-            echo "Downloading: $url"
-
-            if ! curl -L --fail "$url" -o tmp.m3u; then
-              echo "Failed: $url"
-              continue
-            fi
-
-            awk '
-            /^#EXTINF/{
-              ext=$0
-              getline stream
-              gsub(/\r/, "", stream)
-
-              if(!seen[stream]++){
-                print ext
-                print stream
-              }
-            }
-            ' tmp.m3u >> playlist.m3u
-
-          done
-
+          
           rm -f tmp.m3u
 
           echo "Toplam kanal:"
