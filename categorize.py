@@ -56,7 +56,7 @@ while i < len(lines):
 
     if line.startswith("#EXTINF"):
 
-        name = line.split(",")[-1].strip()
+        name = line.split(",", 1)[1].strip()
 
         category = get_category(name)
 
@@ -66,11 +66,11 @@ while i < len(lines):
         # çift boşlukları temizle
         line = re.sub(r"\s+", " ", line)
 
-        if "#EXTINF:-1" in line:
-            line = line.replace(
-                "#EXTINF:-1",
-                f'#EXTINF:-1 group-title="{category}"'
-            )
+        line = re.sub(
+            r'^#EXTINF:-1',
+            f'#EXTINF:-1 group-title="{category}"',
+            line
+        )
 
         output.append(line)
 
