@@ -19,7 +19,7 @@ jobs:
       - name: Build playlist
         shell: bash
         run: |
-          echo "#EXTM3U" > playlist.m3u
+          echo '#EXTM3U x-tvg-url="..."' > playlist.m3u
 
           while IFS= read -r url || [ -n "$url" ]; do
 
