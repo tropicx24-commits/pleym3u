@@ -11,6 +11,7 @@ https://moondigitaledge2.radyotvonline.net/radyo7fmo/playlist.m3u8
 https://moondigitaledge2.radyotvonline.net/radyo7muhtesem4lu/playlist.m3u8
 #EXTINF:-1,ANKARA HV
 https://moondigitaledge2.radyotvonline.net/radyo7ankara/playlist.m3u8
+
 #EXTINF:-1,USKUDAR
 https://hls.ibb.gov.tr/ls/cam_turistik/b_uskudar.stream/playlist.m3u8
 #EXTINF:-1,EMİNÖNÜ
@@ -205,12 +206,18 @@ https://hoktastream3.webcamera.pl/jantar_cam_8948dd/jantar_cam_8948dd.stream/pla
 https://hoktastream1.webcamera.pl/katyrybackie_cam_2d3c0c/katyrybackie_cam_2d3c0c.stream/playlist.m3u8
 #EXTINF:-1  group-title="Plaże",KRYNICA MORSKA - widok na plaże
 https://hoktastream4.webcamera.pl/krynicamorska_cam_ba179a/krynicamorska_cam_ba179a.stream/playlist.m3u8
+
+# PORTEKİZ BEACH
+
 #EXTINF:-1,Praia Canide Norte - Sul
 https://video-auth1.iol.pt/beachcam/bccanidelo/playlist.m3u8
+
 #EXTINF:-1,Espinho
 https://video-auth1.iol.pt/beachcam/espinho/playlist.m3u8
+
 #EXTINF:-1,Esmoriz
- https://video-auth1.iol.pt/beachcam/esmoriz/playlist.m3u8
+https://video-auth1.iol.pt/beachcam/esmoriz/playlist.m3u8
+
 #EXTINF:-1,Furadouro
 https://video-auth1.iol.pt/beachcam/furadouro/playlist.m3u8
 #EXTINF:-1,Praia da Torreira
@@ -497,6 +504,9 @@ https://video-auth1.iol.pt/beachcam/bcmadeiraseixal/playlist.m3u8
 https://video-auth1.iol.pt/beachcam/bcfaja/playlist.m3u8
 #EXTINF:-1,Madeira | Paul do Mar
 https://video-auth1.iol.pt/beachcam/bcpauldomar2/playlist.m3u8
+
+# AKOM
+
 #EXTINF:-1 group-title="*TÜRK_Webcam",Istanbul_AKOM - 25
 http://ibb-media2.ibb.gov.tr:1935/live/25.stream/playlist.m3u8
 #EXTINF:-1 group-title="*TÜRK_Webcam",Istanbul_AKOM - 69
@@ -791,6 +801,9 @@ http://ibb-media2.ibb.gov.tr:1935/live/976.stream/playlist.m3u8
 http://ibb-media2.ibb.gov.tr:1935/live/981.stream/playlist.m3u8
 #EXTINF:-1 group-title="*TÜRK_Webcam",Istanbul_AKOM - 987
 http://ibb-media2.ibb.gov.tr:1935/live/987.stream/playlist.m3u8
+
+# TR
+
 #EXTINF:-1 tvg-id="" tvg-name="┃TR| SPOR KANALI GOLD",┃ TRT 1" GROUP-TITLE="┃TR┃ ULUSAL",TRT 1
 http://line.tvdsz.cc/play/live.php?mac=00%3A1A%3A79%3AB5%3ACD%3A60&stream=196699&extension=ts
 #EXTINF:-1 tvg-id="" tvg-name="┃TR┃ ATV" group-title="┃TR┃ ULUSAL",ATV
