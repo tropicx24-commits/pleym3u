@@ -1,4 +1,4 @@
-#EXTM3U
+#EXTM3U x-tvg-url="..."
 #EXTINF:-1 group-title="Radyo",Radyo 7 Arabesk 7 https://moondigitaledge2.radyotvonline.net/radyo7turku/playlist.m3u8
 #EXTINF:-1 group-title="Radyo",RADYO7 SLOW https://moondigitaledge2.radyotvonline.net/radyo7slow/playlist.m3u8
 #EXTINF:-1 group-title="Radyo",RADYO7 ARABESK https://moondigitaledge2.radyotvonline.net/radyo7arabesk/playlist.m3u8
