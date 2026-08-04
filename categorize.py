@@ -7,6 +7,19 @@ import re
 INPUT_FILE = "playlist.m3u"
 OUTPUT_FILE = "playlist.m3u"
 CATEGORY_FILE = "categories.json"
+ORDER = [
+    "Haber",
+    "Ulusal",
+    "Spor",
+    "Film",
+    "Dizi",
+    "Belgesel",
+    "Çocuk",
+    "Müzik",
+    "Radyo",
+    "WebCam",
+    "Diğer"
+]
 
 # Kategori dosyasını oku
 with open(CATEGORY_FILE, "r", encoding="utf-8") as f:
@@ -84,7 +97,41 @@ while i < len(lines):
         i += 1
 
 
-with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-    f.writelines(output)
+from collections import defaultdict
 
-print("Kategorilendirme tamamlandı.")
+groups = defaultdict(list)
+
+i = 0
+while i < len(new_lines):
+    line = new_lines[i]
+
+    if line.startswith("#EXTINF"):
+        url = new_lines[i + 1]
+
+        m = re.search(r'group-title="([^"]+)"', line)
+        if m:
+            category = m.group(1)
+        else:
+            category = "Diğer"
+
+        groups[category].append(line)
+        groups[category].append(url)
+
+        i += 2
+    else:
+        i += 1
+
+
+with open("playlist.m3u", "w", encoding="utf-8") as out:
+
+    out.write("#EXTM3U\n")
+
+    for category in ORDER:
+
+        if category not in groups:
+            continue
+
+        out.write(f"\n# ===== {category} =====\n")
+
+        for item in groups[category]:
+            out.write(item)
