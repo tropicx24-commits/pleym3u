@@ -2,3 +2,5 @@ https://raw.githubusercontent.com/tropicx24-commits/my_channels.m3u/main/playlis
 https://raw.githubusercontent.com/batuhansabri55/AkcagozTV_Film/main/FilmDizi.m3u
 https://raw.githubusercontent.com/LITUATUI/M3UPT/refs/heads/main/M3U/TVI_Reality.m3u8
 https://raw.githubusercontent.com/Lonestar1306/iptv-auto-playlists/refs/heads/main/daddylive.m3u
+https://raw.githubusercontent.com/Lunedor/iptvTR/refs/heads/main/FilmArsiv.m3
+https://raw.githubusercontent.com/Zerk1903/zerkfilm/refs/heads/main/Filmler.m3u
