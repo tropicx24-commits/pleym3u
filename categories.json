@@ -1,3 +1,4 @@
+{
 "Haber": [
   "TRT HABER",
   "TRT HABER HD",
@@ -128,7 +129,7 @@
   "NEWS",
 
   "HABER"
-]
+],
 "Ulusal": [
   "TRT 1",
   "TRT1",
@@ -284,7 +285,7 @@
   "ZDF",
 
   "ARD"
-]
+],
 "Spor": [
   "TRT Spor",
   "TRT Spor Yıldız",
@@ -557,7 +558,7 @@
   "Extreme Sports",
 
   "Sport"
-]
+],
 "Film": [
   "Movie",
   "Movies",
@@ -714,7 +715,7 @@
   "Türk Filmleri",
 
   "Yeşilçam"
-]
+],
 "Belgesel": [
   "TRT Belgesel",
   "TRT HD Belgesel",
@@ -837,7 +838,7 @@
   "Ancient",
 
   "Civilization"
-]
+],
 "Çocuk": [
   "TRT Çocuk",
   "TRT Cocuk",
@@ -959,7 +960,7 @@
   "Kids TV",
 
   "Kids Channel"
-]
+],
 "Müzik": [
   "Power",
   "Power TV",
@@ -1053,7 +1054,7 @@
   "Metal",
 
   "Concert"
-]
+],
 "Radyo": [
   "Radyo",
   "Radio",
@@ -1155,7 +1156,7 @@
   "Web Radio",
 
   "Online Radio"
-]
+],
 "WebCam": [
 
   "Webcam",
@@ -1347,4 +1348,5 @@
   "Mountain Cam",
 
   "Nature Cam"
-]
+ ]
+}
