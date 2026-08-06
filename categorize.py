@@ -3,10 +3,6 @@
 
 import json
 import re
-from collections import Counter
-
-stats = Counter()
-unmatched = set()
 
 INPUT_FILE = "playlist.m3u"
 CATEGORY_FILE = "categories.json"
@@ -52,7 +48,7 @@ def extract_attr(line, attr):
     return ""
 
 
-
+def get_category(extinf_line, channel_name):
 
     search_text = " ".join([
         channel_name,
@@ -127,12 +123,5 @@ while i < len(lines):
 
 with open(INPUT_FILE, "w", encoding="utf-8") as f:
     f.writelines(output)
-stats["Toplam"] = sum(stats.values())
 
-with open("report.json", "w", encoding="utf-8") as f:
-    json.dump(dict(stats), f, ensure_ascii=False, indent=4)
-
-with open("unmatched.txt", "w", encoding="utf-8") as f:
-    for ch in sorted(unmatched):
-        f.write(ch + "\n")
 print("Kategori işlemi tamamlandı.")
