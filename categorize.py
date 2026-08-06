@@ -52,7 +52,7 @@ def extract_attr(line, attr):
     return ""
 
 
-git add playlist.m3u report.json unmatched.txt
+
 
     search_text = " ".join([
         channel_name,
