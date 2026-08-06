@@ -4,4 +4,5 @@ https://raw.githubusercontent.com/LITUATUI/M3UPT/refs/heads/main/M3U/TVI_Reality
 https://raw.githubusercontent.com/Lonestar1306/iptv-auto-playlists/refs/heads/main/daddylive.m3u
 https://raw.githubusercontent.com/Lunedor/iptvTR/refs/heads/main/FilmArsiv.m3u
 https://raw.githubusercontent.com/Zerk1903/zerkfilm/refs/heads/main/Filmler.m3u
-https://raw.githubusercontent.com/batuhansabri55/AkcagozTV_Canli/refs/heads/main/tr.m3u
+https://raw.githubusercontent.com/smtv62/smtv/refs/heads/main/turkce.m3u
+https://raw.githubusercontent.com/hydrokin/M3U/e4e9ba44d54d360ff3de6388220a4dc1019bf34e/tvando.m3u
