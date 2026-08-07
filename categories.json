@@ -18,6 +18,9 @@
   "Film": [
     "Movie","Cinema","Film","Sinema","HBO","Cinemax","Sinema Aksiyon","Sinema Komedi"
   ],
+   "diğer": [
+    "Movie","Cinema","Film","Sinema","1955-2009","Sinema Aksiyon","Sinema Komedi"
+  ],
 
   "Belgesel": [
     "Discovery","National Geographic","History","Animal Planet","Viasat History","Love Nature","Viasat Explore","National Wild","BBC Earth","TRT HD Belgesel","TRT Belgesel","Discovery Science"
