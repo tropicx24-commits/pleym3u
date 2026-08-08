@@ -167,4 +167,4 @@ with open(INPUT_FILE, "w", encoding="utf-8") as f:
 print("Kategori işlemi tamamlandı.")
 print("Manuel group-title değerleri korundu.")
 print("Diğer kategorisindeki kanallar otomatik kategorilendirildi.")
-```
+
