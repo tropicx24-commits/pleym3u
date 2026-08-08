@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
@@ -41,9 +40,10 @@ def normalize(text):
 # FILM KAYNAKLARINI KONTROL ET
 # --------------------------------------------------
 
-def is_movie(line, name):
+def is_movie(line, name, stream_url=""):
 
     line_lower = line.lower()
+    stream_lower = stream_url.lower()
     name_clean = name.strip()
 
     # 1. tvg-year
@@ -51,10 +51,10 @@ def is_movie(line, name):
         return True
 
     # 2. TMDB
-    if "image.tmdb.org" in line_lower:
+    if "image.tmdb.org" in line_lower or "themoviedb.org" in line_lower:
         return True
 
-    # 3. HDFilmizle
+    # 3. Film kaynakları
     movie_sources = [
         "hdfilmizle.life",
         "fullhdfilmizlesene.de",
@@ -65,11 +65,13 @@ def is_movie(line, name):
         "/poster/filmler/",
         "/poster/thumb/",
         "filmposter",
-        "movieposter"
+        "movieposter",
     ]
 
+    combined = line_lower + " " + stream_lower
+
     for source in movie_sources:
-        if source in line_lower:
+        if source in combined:
             return True
 
     # 4. Film adının sonunda yıl
@@ -87,205 +89,179 @@ def is_movie(line, name):
 # OTOMATİK KATEGORİ
 # --------------------------------------------------
 
-def get_category(line, name):
-
-    # --------------------------------------------------
-    # 1. FILM KAYNAKLARI
-    # --------------------------------------------------
-
-    if is_movie(line, name):
-        return "Film"
+def get_category(line, name, stream_url=""):
 
     line_lower = line.lower()
+    stream_lower = stream_url.lower()
     n = normalize(name)
 
-    # HDFilmizle
-    movie_sources = [
-        "hdfilmizle.life",
-        "fullhdfilmizlesene.de",
-        "fullhdfilmizle",
-        "filmizlesene",
-        "film-izle",
-        "/poster/film/",
-        "/poster/filmler/",
-        "/poster/thumb/",
-        "filmposter",
-        "movieposter"
-    ]
+    # --------------------------------------------------
+    # 1. FILM
+    # --------------------------------------------------
 
-    for source in movie_sources:
-        if source in line_lower:
-            return "Film"
-
+    if is_movie(line, name, stream_url):
+        return "Film"
 
     # --------------------------------------------------
     # 2. SPOR
     # --------------------------------------------------
 
     sport_words = [
-        "SPOR",
-        "SPORT",
-        "SPORTS",
-        "S SPORT",
-        "SMART SPOR",
-        "TIVIBU SPOR",
-        "BEIN SPORTS",
-        "TRT SPOR",
-        "EUROSPORT",
-        "ALKASS",
-        "CRICKET",
-        "WWE",
-        "ESPN",
-        "SKY SPORTS",
-        "SPORT TV",
-        "ACC NETWORK",
-        "NBA TV",
-        "NFL",
-        "NHL",
-        "MLB",
-        "WILLOW"
+        "SPOR", "SPORT", "SPORTS", "S SPORT",
+        "SMART SPOR", "TIVIBU SPOR", "BEIN SPORTS",
+        "TRT SPOR", "EUROSPORT", "ALKASS",
+        "CRICKET", "WWE", "ESPN", "SKY SPORTS",
+        "SPORT TV", "ACC NETWORK", "NBA TV",
+        "NFL", "NHL", "MLB", "WILLOW",
+        "DAZN", "DEPORTES", "FOOTBALL", "SOCCER",
+        "TENNIS", "BASKETBALL", "HOCKEY", "MOTOR",
+        "MOTORSPORT", "FORMULA 1", "F1", "UFC",
+        "BOXING", "WRESTLING", "GOLF",
     ]
 
     for word in sport_words:
         if normalize(word) in n:
             return "Spor"
 
-
     # --------------------------------------------------
     # 3. BELGESEL
     # --------------------------------------------------
 
     documentary_words = [
-        "NAT GEO",
-        "NATGEO",
-        "NATIONAL GEOGRAPHIC",
-        "DISCOVERY",
-        "ANIMAL PLANET",
-        "HISTORY",
-        "HISTORY CHANNEL",
-        "SCIENCE",
-        "DOCUMENTARY",
-        "BELGESEL",
-        "YABAN TV",
-        "NATURE",
-        "NATURE TIME",
-        "IZ TV",
-        "VIASAT"
+        "NAT GEO", "NATGEO", "NATIONAL GEOGRAPHIC",
+        "DISCOVERY", "ANIMAL PLANET", "HISTORY",
+        "HISTORY CHANNEL", "SCIENCE", "DOCUMENTARY",
+        "BELGESEL", "YABAN TV", "NATURE",
+        "NATURE TIME", "IZ TV", "VIASAT",
     ]
 
     for word in documentary_words:
         if normalize(word) in n:
             return "Belgesel"
 
-
     # --------------------------------------------------
     # 4. RADYO
     # --------------------------------------------------
 
-    radio_words = [
-        "RADYO",
-        "RADIO",
-        "RADYOTV"
-    ]
+    radio_words = ["RADYO", "RADIO", "RADYOTV"]
 
     for word in radio_words:
         if normalize(word) in n:
             return "Radyo"
 
-    # FM kontrolü
     if re.search(r'\bFM\b', n):
         return "Radyo"
-
 
     # --------------------------------------------------
     # 5. MÜZİK
     # --------------------------------------------------
 
     music_words = [
-        "MUSIC",
-        "MÜZİK",
-        "NUMBERONE",
-        "NUMBER ONE",
-        "NUMBER1",
-        "NR1",
-        "MTV",
-        "POWER FM",
-        "DREAM TV",
-        "DREAM FM",
-        "KRAL"
+        "MUSIC", "MÜZİK", "NUMBERONE", "NUMBER ONE",
+        "NUMBER1", "NR1", "MTV", "POWER FM",
+        "DREAM TV", "DREAM FM", "KRAL",
     ]
 
     for word in music_words:
         if normalize(word) in n:
             return "Müzik"
 
-
     # --------------------------------------------------
     # 6. HABER
     # --------------------------------------------------
 
     news_words = [
-        "NEWS",
-        "HABER",
-        "HABERLER",
-        "CNN",
-        "BBC NEWS",
-        "SKY NEWS",
-        "EURONEWS",
-        "AL JAZEERA",
-        "MSNBC",
-        "FOX NEWS",
-        "POLSTAT NEWS"
+        "NEWS", "HABER", "HABERLER", "CNN",
+        "BBC NEWS", "SKY NEWS", "EURONEWS",
+        "AL JAZEERA", "MSNBC", "FOX NEWS",
+        "POLSTAT NEWS",
     ]
 
     for word in news_words:
         if normalize(word) in n:
             return "Haber"
 
-
     # --------------------------------------------------
     # 7. ÇOCUK
     # --------------------------------------------------
 
     kids_words = [
-        "KIDS",
-        "ÇOCUK",
-        "CARTOON",
-        "NICKELODEON",
-        "NICK JR",
-        "DISNEY",
-        "BOOMERANG",
-        "BABY TV"
+        "KIDS", "ÇOCUK", "CARTOON", "NICKELODEON",
+        "NICK JR", "DISNEY", "BOOMERANG", "BABY TV",
     ]
 
     for word in kids_words:
         if normalize(word) in n:
             return "Çocuk"
 
+    # --------------------------------------------------
+    # 8. WEBCAM
+    # --------------------------------------------------
+    # PORT / HARBOUR / TRAFFIC gibi tek başına genel
+    # kelimeler kullanılmıyor. Böylece Porto Canal,
+    # RTP, Movistar Deportes vb. yanlışlıkla WebCam olmaz.
+
+    webcam_name_words = [
+        "WEBCAM",
+        "WEB CAMERA",
+        "LIVE CAM",
+        "BEACH CAM",
+        "CITY CAM",
+        "CITY CAMERA",
+        "TRAFFIC CAM",
+        "SQUARE CAM",
+        "BEACH CAMERA",
+        "PORT CAM",
+        "HARBOUR CAM",
+        "HARBOR CAM",
+        "MARINA CAM",
+        "AIRPORT CAM",
+        "SKI CAM",
+        "MOUNTAIN CAM",
+        "LAKE CAM",
+    ]
+
+    for word in webcam_name_words:
+        if normalize(word) in n:
+            return "WebCam"
+
+    webcam_url_words = [
+        "webcam",
+        "webcamera",
+        "livecam",
+        "live-cam",
+        "earthcam",
+        "ozolio",
+        "webcamera.pl",
+    ]
+
+    for word in webcam_url_words:
+        if word in stream_lower:
+            return "WebCam"
 
     # --------------------------------------------------
-    # 8. categories.json
+    # 9. categories.json
     # --------------------------------------------------
 
     for category, words in categories.items():
 
-        # Diğer'i otomatik eşleştirme
         if category.lower() == "diğer":
             continue
 
-        for word in words:
+        # WebCam JSON kuralı varsa burada genel kelime
+        # eşleşmesiyle yanlış sınıflandırılmasını engelle.
+        if category.lower() == "webcam":
+            continue
 
+        for word in words:
             if normalize(word) in n:
                 return category
 
-
     # --------------------------------------------------
-    # 9. HİÇBİR ŞEY BULUNAMADI
+    # 10. HİÇBİR ŞEY BULUNAMADI
     # --------------------------------------------------
 
     return "Diğer"
-
-
 
 
 # --------------------------------------------------
@@ -310,6 +286,7 @@ music_count = 0
 news_count = 0
 documentary_count = 0
 kids_count = 0
+webcam_count = 0
 
 
 # --------------------------------------------------
@@ -328,6 +305,14 @@ while i < len(lines):
         else:
             name = ""
 
+
+        # --------------------------------------------------
+        # URL satırı
+        # --------------------------------------------------
+
+        stream_url = ""
+        if i + 1 < len(lines):
+            stream_url = lines[i + 1].strip()
 
         # --------------------------------------------------
         # Mevcut group-title
@@ -349,14 +334,16 @@ while i < len(lines):
         # Manuel kategori varsa KORU
         # --------------------------------------------------
 
-        if existing_category and existing_category.lower() != "diğer":
-
+        # Diğer ve WebCam kayıtları yeniden kontrol edilir.
+        # Böylece yanlış atanmış WebCam kayıtları düzeltilir.
+        if (
+            existing_category
+            and existing_category.lower() not in ("diğer", "webcam")
+        ):
             category = existing_category
             manual_count += 1
-
         else:
-
-            category = get_category(line, name)
+            category = get_category(line, name, stream_url)
             auto_count += 1
 
 
@@ -384,6 +371,9 @@ while i < len(lines):
 
         elif category == "Çocuk":
             kids_count += 1
+
+        elif category == "WebCam":
+            webcam_count += 1
 
         elif category == "Diğer":
             other_count += 1
@@ -453,6 +443,6 @@ print(f"Müzik              : {music_count}")
 print(f"Haber              : {news_count}")
 print(f"Belgesel           : {documentary_count}")
 print(f"Çocuk              : {kids_count}")
+print(f"WebCam             : {webcam_count}")
 print(f"Diğer              : {other_count}")
 print("========================================")
-
