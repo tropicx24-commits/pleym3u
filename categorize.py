@@ -414,7 +414,11 @@ while i < len(lines):
 
         else:
 
-            category = get_category(line, name)
+            stream_url = ""
+            if i + 1 < len(lines):
+                stream_url = lines[i + 1].strip()
+
+            category = get_category(line, name, stream_url)
             auto_count += 1
 
 
