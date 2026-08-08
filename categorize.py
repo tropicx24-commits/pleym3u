@@ -40,7 +40,7 @@ def normalize(text):
 # FILM KAYNAKLARINI KONTROL ET
 # --------------------------------------------------
 
-def is_movie(line, name):
+def is_movie(line, name, stream_url=""):
 
     line_lower = line.lower()
     name_clean = name.strip()
@@ -86,7 +86,7 @@ def is_movie(line, name):
 # OTOMATİK KATEGORİ
 # --------------------------------------------------
 
-def get_category(line, name):
+def get_category(line, name, stream_url=""):
 
     # --------------------------------------------------
     # 1. FILM KAYNAKLARI
