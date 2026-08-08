@@ -41,8 +41,9 @@ def normalize(text):
 # --------------------------------------------------
 
 def is_movie(line, name, stream_url=""):
-
     line_lower = line.lower()
+    stream_lower = stream_url.lower()
+    combined_lower = line_lower + " " + stream_lower
     name_clean = name.strip()
 
     # 1. tvg-year
