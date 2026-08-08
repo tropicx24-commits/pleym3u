@@ -368,6 +368,7 @@ radio_count = 0
 music_count = 0
 news_count = 0
 documentary_count = 0
+webcam_count = 0
 kids_count = 0
 
 
