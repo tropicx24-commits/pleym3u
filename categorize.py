@@ -13,6 +13,7 @@ REMOVE_WORDS = [
     "H265", "H264", "1080P", "720P"
 ]
 
+
 # --------------------------------------------------
 # Kategorileri yükle
 # --------------------------------------------------
@@ -37,14 +38,65 @@ def normalize(text):
 
 
 # --------------------------------------------------
-# Otomatik kategori bul
+# Film kontrolü
 # --------------------------------------------------
 
-def get_category(name):
+def is_movie(line, name):
+
+    line_lower = line.lower()
+    name_clean = name.strip()
+
+    # 1. tvg-year varsa
+    if re.search(r'\btvg-year="(?:19|20)\d{2}"', line_lower):
+        return True
+
+    # 2. TMDB logo
+    if "image.tmdb.org" in line_lower:
+        return True
+
+    # 3. Film sitesi poster adresi
+    film_patterns = [
+        "/poster/film/",
+        "/poster/filmler/",
+        "fullhdfilm",
+        "filmizlesene",
+        "film-izle",
+        "filmposter"
+    ]
+
+    for pattern in film_patterns:
+        if pattern in line_lower:
+            return True
+
+    # 4. Kanal adının sonunda yıl
+    if re.search(r'\((?:19|20)\d{2}\)\s*$', name_clean):
+        return True
+
+    # 5. Kanal adının sonunda boşluk + yıl
+    if re.search(r'\s(?:19|20)\d{2}\s*$', name_clean):
+        return True
+
+    return False
+
+
+# --------------------------------------------------
+# Otomatik kategori
+# --------------------------------------------------
+
+def get_category(line, name):
+
+    # Önce film kontrolü
+    if is_movie(line, name):
+        return "Film"
 
     n = normalize(name)
 
+    # categories.json kuralları
     for category, words in categories.items():
+
+        # "diğer" kategorisini otomatik eşleştirme
+        if category.lower() == "diğer":
+            continue
 
         for word in words:
 
@@ -66,9 +118,14 @@ output = []
 
 i = 0
 
+film_count = 0
+manual_count = 0
+auto_count = 0
+other_count = 0
+
 
 # --------------------------------------------------
-# Kanalları işle
+# Playlist işle
 # --------------------------------------------------
 
 while i < len(lines):
@@ -83,8 +140,9 @@ while i < len(lines):
         else:
             name = ""
 
+
         # --------------------------------------------------
-        # Mevcut group-title değerini bul
+        # Mevcut group-title kontrolü
         # --------------------------------------------------
 
         match = re.search(
@@ -100,22 +158,35 @@ while i < len(lines):
 
 
         # --------------------------------------------------
-        # Manuel kategori varsa KORU
+        # Manuel kategori varsa koru
         # --------------------------------------------------
 
         if existing_category and existing_category.lower() != "diğer":
 
             category = existing_category
+            manual_count += 1
+
 
         else:
 
-            # group-title yoksa veya Diğer ise
-            # otomatik kategorilendir
-            category = get_category(name)
+            # Otomatik kategori
+            category = get_category(line, name)
+            auto_count += 1
 
 
         # --------------------------------------------------
-        # Eski group-title bilgisini kaldır
+        # Sayaçlar
+        # --------------------------------------------------
+
+        if category == "Film":
+            film_count += 1
+
+        if category == "Diğer":
+            other_count += 1
+
+
+        # --------------------------------------------------
+        # Eski group-title kaldır
         # --------------------------------------------------
 
         line = re.sub(
@@ -130,20 +201,18 @@ while i < len(lines):
         # Yeni group-title ekle
         # --------------------------------------------------
 
-        if line.startswith("#EXTINF:-1"):
-
-            line = re.sub(
-                r'^#EXTINF:-1',
-                f'#EXTINF:-1 group-title="{category}"',
-                line,
-                count=1
-            )
+        line = re.sub(
+            r'^#EXTINF:-1',
+            f'#EXTINF:-1 group-title="{category}"',
+            line,
+            count=1
+        )
 
 
         output.append(line)
 
 
-        # Yayın URL'sini de ekle
+        # URL satırı
         if i + 1 < len(lines):
             output.append(lines[i + 1])
 
@@ -152,19 +221,27 @@ while i < len(lines):
     else:
 
         output.append(line)
-
         i += 1
 
 
 # --------------------------------------------------
-# Playlist'i kaydet
+# Playlist kaydet
 # --------------------------------------------------
 
 with open(INPUT_FILE, "w", encoding="utf-8") as f:
     f.writelines(output)
 
 
+# --------------------------------------------------
+# Sonuç
+# --------------------------------------------------
+
+print("========================================")
 print("Kategori işlemi tamamlandı.")
-print("Manuel group-title değerleri korundu.")
-print("Diğer kategorisindeki kanallar otomatik kategorilendirildi.")
+print("========================================")
+print(f"Manuel kategoriler : {manual_count}")
+print(f"Otomatik kategoriler: {auto_count}")
+print(f"Bulunan filmler    : {film_count}")
+print(f"Diğer kalanlar     : {other_count}")
+print("========================================")
 
