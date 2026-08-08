@@ -8,7 +8,21 @@
   ],
 
   "Spor": [
-    "TRT Spor","TRT Spor Yıldız","A Spor","S Sport","Eurosport","beIN","Sport TV","Sky Sport","ESPN"
+    "TRT Spor",
+    "TRT Spor Yıldız",
+    "A Spor",
+    "S Sport",
+    "Eurosport",
+    "beIN",
+    "Sport TV",
+    "Sky Sport",
+    "ESPN",
+    "Tivibu Spor",
+    "Smart Spor",
+    "Alkass",
+    "Astro Cricket",
+    "ACC Network"
+
   ],
 
   "Çocuk": [
@@ -28,8 +42,15 @@
   ],
 
   "Müzik": [
-    "Power","Dream","Kral","MTV","Number One","NR1","Music"
-  ],
+    "Power",
+    "Dream",
+    "Kral",
+    "MTV",
+    "Number One",
+    "NumberOne",
+    "NR1",
+    "Music"
+],
 
   "Radyo": [
     "Radyo","Radio","FM"
