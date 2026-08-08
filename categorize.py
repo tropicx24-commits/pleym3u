@@ -89,17 +89,39 @@ def is_movie(line, name):
 
 def get_category(line, name):
 
-    # Öncelik 1: Film kaynakları
+    # --------------------------------------------------
+    # 1. FILM KAYNAKLARI
+    # --------------------------------------------------
+
     if is_movie(line, name):
         return "Film"
 
+    line_lower = line.lower()
     n = normalize(name)
 
+    # HDFilmizle
+    movie_sources = [
+        "hdfilmizle.life",
+        "fullhdfilmizlesene.de",
+        "fullhdfilmizle",
+        "filmizlesene",
+        "film-izle",
+        "/poster/film/",
+        "/poster/filmler/",
+        "/poster/thumb/",
+        "filmposter",
+        "movieposter"
+    ]
+
+    for source in movie_sources:
+        if source in line_lower:
+            return "Film"
+
+
     # --------------------------------------------------
-    # Özel otomatik kurallar
+    # 2. SPOR
     # --------------------------------------------------
 
-    # SPOR
     sport_words = [
         "SPOR",
         "SPORT",
@@ -120,7 +142,8 @@ def get_category(line, name):
         "NBA TV",
         "NFL",
         "NHL",
-        "MLB"
+        "MLB",
+        "WILLOW"
     ]
 
     for word in sport_words:
@@ -128,12 +151,40 @@ def get_category(line, name):
             return "Spor"
 
 
-    # RADYO
+    # --------------------------------------------------
+    # 3. BELGESEL
+    # --------------------------------------------------
+
+    documentary_words = [
+        "NAT GEO",
+        "NATGEO",
+        "NATIONAL GEOGRAPHIC",
+        "DISCOVERY",
+        "ANIMAL PLANET",
+        "HISTORY",
+        "HISTORY CHANNEL",
+        "SCIENCE",
+        "DOCUMENTARY",
+        "BELGESEL",
+        "YABAN TV",
+        "NATURE",
+        "NATURE TIME",
+        "IZ TV",
+        "VIASAT"
+    ]
+
+    for word in documentary_words:
+        if normalize(word) in n:
+            return "Belgesel"
+
+
+    # --------------------------------------------------
+    # 4. RADYO
+    # --------------------------------------------------
+
     radio_words = [
         "RADYO",
         "RADIO",
-        "FM ",
-        "FM",
         "RADYOTV"
     ]
 
@@ -141,8 +192,15 @@ def get_category(line, name):
         if normalize(word) in n:
             return "Radyo"
 
+    # FM kontrolü
+    if re.search(r'\bFM\b', n):
+        return "Radyo"
 
-    # MÜZİK
+
+    # --------------------------------------------------
+    # 5. MÜZİK
+    # --------------------------------------------------
+
     music_words = [
         "MUSIC",
         "MÜZİK",
@@ -162,10 +220,12 @@ def get_category(line, name):
             return "Müzik"
 
 
-    # HABER
+    # --------------------------------------------------
+    # 6. HABER
+    # --------------------------------------------------
+
     news_words = [
         "NEWS",
-        "NEWS HD",
         "HABER",
         "HABERLER",
         "CNN",
@@ -183,28 +243,10 @@ def get_category(line, name):
             return "Haber"
 
 
-    # BELGESEL
-    documentary_words = [
-        "NAT GEO",
-        "NATGEO",
-        "NATIONAL GEOGRAPHIC",
-        "DISCOVERY",
-        "ANIMAL PLANET",
-        "HISTORY",
-        "HISTORY CHANNEL",
-        "SCIENCE",
-        "DOCUMENTARY",
-        "BELGESEL",
-        "YABAN TV",
-        "NATURE"
-    ]
+    # --------------------------------------------------
+    # 7. ÇOCUK
+    # --------------------------------------------------
 
-    for word in documentary_words:
-        if normalize(word) in n:
-            return "Belgesel"
-
-
-    # ÇOCUK
     kids_words = [
         "KIDS",
         "ÇOCUK",
@@ -222,12 +264,12 @@ def get_category(line, name):
 
 
     # --------------------------------------------------
-    # categories.json
+    # 8. categories.json
     # --------------------------------------------------
 
     for category, words in categories.items():
 
-        # Diğer'i otomatik eşleştirmiyoruz
+        # Diğer'i otomatik eşleştirme
         if category.lower() == "diğer":
             continue
 
@@ -237,8 +279,13 @@ def get_category(line, name):
                 return category
 
 
-    # Hiçbir kategori bulunamazsa
+    # --------------------------------------------------
+    # 9. HİÇBİR ŞEY BULUNAMADI
+    # --------------------------------------------------
+
     return "Diğer"
+
+
 
 
 # --------------------------------------------------
